@@ -131,8 +131,10 @@ button, input, textarea { font: inherit; }
 }
 
 .brand img {
-  width: auto;
-  max-height: 44px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: contain;
 }
 
 .nav-menu,
@@ -612,7 +614,9 @@ textarea:focus {
 }
 
 .footer-brand img {
-  max-height: 52px;
+  width: 64px;
+  height: 64px;
+  max-height: none;
 }
 
 .footer-contact,
