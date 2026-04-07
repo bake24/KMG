@@ -9,7 +9,8 @@ Create a representative company website for Kayili M Group LLC / KMG that explai
 - Static website entry: `index.html`
 - Global design system, responsive layout, and light/dark themes: `src/styles/main.css`
 - Frontend interactions: `src/scripts/main.js`
-- Brand mark asset: `assets/kmg-mark.svg`
+- Browser/favicon and primary SVG logo: `assets/kmg-logo.svg`
+- Original mark asset: `assets/kmg-mark.svg`
 - Company imagery: `assets/*.png`
 - Partners visual: `assets/partners/partners.png`
 - Shop visuals: `assets/shop/*.png`
@@ -19,6 +20,7 @@ Create a representative company website for Kayili M Group LLC / KMG that explai
 - Default theme is light, with a dark theme toggle in the header.
 - The design uses real truck and product imagery from the local `assets` folder.
 - The visual style is corporate, modern, and representative, focused on trust, recruiting, partners, and company culture.
+- Public company story starts from 2022.
 - Forms are frontend-only templates until backend work begins.
 
 ## Site Structure
@@ -55,6 +57,7 @@ Create a representative company website for Kayili M Group LLC / KMG that explai
 8. Contacts
    - Placeholder phone, email, and location
    - Contact form template
+   - Footer templates for phone, email, address, hours, Instagram, Telegram, LinkedIn, and Facebook
 
 ## Reference Site Notes
 
