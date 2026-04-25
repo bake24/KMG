@@ -9,7 +9,7 @@ Create a representative company website for Kayili M Group LLC / KMG that explai
 - Static website entry: `index.html`
 - Global design system, responsive layout, and light/dark themes: `src/styles/main.css`
 - Frontend interactions: `src/scripts/main.js`
-- Browser/favicon and primary PNG logo: `assets/kmg-logo.png` (`5200x5200`, rendered proportionally as a square mark)
+- Browser/favicon and primary PNG logo: `assets/kmg-logo.svg` (`5200x5200`, rendered proportionally as a square mark)
 - Company imagery: `assets/*.png`
 - Partners visual: `assets/partners/partners.png`
 - Shop visuals: `assets/shop/*.png`

@@ -5,41 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Kayili M Group LLC is a premium OTR trucking company website for drivers, partners, and shippers."
+      content="Kayili M Group LLC is a Philadelphia-based OTR trucking company with strong safety, service shop support, Freightliner trucks, and driver-first programs."
+      data-i18n-attr="content:meta.description"
     />
+    <meta property="og:title" content="KMG LLC | Premium OTR Fleet Since 2022" data-i18n-attr="content:meta.ogTitle" />
+    <meta
+      property="og:description"
+      content="Driver-first OTR trucking company for careers, partnerships, safety, and nationwide freight trust."
+      data-i18n-attr="content:meta.ogDescription"
+    />
+    <meta property="og:image" content="assets/new/pictures for web/18 1200x630.webp" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="assets/new/pictures for web/18 1200x630.webp" />
     <title>KMG LLC | Premium OTR Fleet Since 2022</title>
-    <link rel="icon" href="assets/kmg-logo.png" type="image/png" />
-    <link rel="apple-touch-icon" href="assets/kmg-logo.png" />
+    <link rel="icon" href="assets/new/pictures for web/23 logo circle.png" type="image/png" data-favicon />
+    <link rel="apple-touch-icon" href="assets/new/pictures for web/23 logo circle.png" />
     <link rel="stylesheet" href="src/styles/main.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
     <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
 
     <header class="site-header" data-header>
       <nav class="nav-shell" aria-label="Primary navigation">
-        <a class="nav-brand" href="#home" aria-label="KMG LLC home">
-          <img src="assets/kmg-logo.png" alt="KMG LLC" width="44" height="44" />
+        <a class="nav-brand" href="index.html" aria-label="KMG LLC home">
+          <img
+            src="assets/new/pictures for web/22 logo vector/logo_dark.svg"
+            alt="KMG LLC"
+            width="96"
+            height="96"
+            data-logo
+            data-logo-light="assets/new/pictures for web/22 logo vector/logo_dark.svg"
+            data-logo-dark="assets/new/pictures for web/22 logo vector/logo_light.svg"
+          />
           <span>KMG LLC</span>
         </a>
 
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" data-nav-toggle>
-          <span class="sr-only">Open navigation</span>
+          <span class="sr-only" data-i18n="a11y.openNav">Open navigation</span>
           <span></span><span></span><span></span>
         </button>
 
         <div class="nav-menu" id="primary-menu" data-nav-menu>
-          <a href="#about">About</a>
-          <a href="#careers">Careers</a>
-          <a href="#partners">Partners</a>
-          <a href="#shop">Shop</a>
-          <a href="#blogs">Blog</a>
-          <a href="#contacts">Contact</a>
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="index.html#careers" data-i18n="nav.careers">Careers</a>
+          <a href="safety-service.html" data-i18n="nav.safety">Safety</a>
+          <a href="partners.html" data-i18n="nav.partners">Partners</a>
+          <a href="shop.html" data-i18n="nav.shop">Shop</a>
+          <a href="news.html" data-i18n="nav.blog">News</a>
+          <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
         </div>
 
         <div class="nav-actions">
+          <div class="language-switcher" aria-label="Language selector">
+            <button class="lang-button is-active" type="button" data-lang="en" aria-label="English">&#127482;&#127480;</button>
+            <button class="lang-button" type="button" data-lang="ru" aria-label="Russian">&#127479;&#127482;</button>
+            <button class="lang-button" type="button" data-lang="uz" aria-label="Uzbek">&#127482;&#127487;</button>
+          </div>
           <button class="button button-ghost" type="button" data-theme-toggle aria-label="Switch theme">Light</button>
-          <a class="button button-light" href="#apply">Apply to Drive</a>
+          <a class="button button-light" href="index.html#apply" data-i18n="cta.apply">Apply to Drive</a>
         </div>
       </nav>
     </header>
@@ -49,358 +74,178 @@
         <div class="hero-glow" aria-hidden="true"></div>
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-inner reveal">
-          <p class="hero-eye">Kayili M Group LLC · Nationwide OTR Fleet Since 2022</p>
-          <h1>
+          <p class="hero-eye" data-i18n="hero.eye">Philadelphia-based OTR fleet since 2022</p>
+          <h1 data-i18n="hero.title">
             A premium fleet built on
             <em>discipline, trust, and long careers.</em>
           </h1>
-          <p class="hero-sub">
-            We do not just move freight. We build the kind of operation drivers are proud to be part of and
-            shippers know they can count on.
+          <p class="hero-sub" data-i18n="hero.subtitle">
+            A driver-first trucking company with strong safety, in-house service support, Freightliner trucks,
+            and dedicated lanes across the United States.
           </p>
           <div class="hero-actions">
-            <a class="button button-light" href="#apply">Apply to Drive</a>
-            <a class="button button-dark-outline" href="#partners">Become a Partner</a>
+            <a class="button button-light" href="index.html#apply" data-i18n="cta.apply">Apply to Drive</a>
+            <a class="button button-dark-outline" href="partners.html" data-i18n="cta.partner">Become a Partner</a>
           </div>
         </div>
         <div class="hero-image reveal" data-parallax>
-          <div class="hero-chip hero-chip-left" aria-hidden="true">48 states · OTR</div>
-          <div class="hero-chip hero-chip-right" aria-hidden="true">24/7 dispatch</div>
-          <img src="assets/Freightliner Cascadia in twilight rain.png" alt="KMG truck in cinematic twilight rain" />
+          <div class="hero-chip hero-chip-left" aria-hidden="true" data-i18n="hero.chipLeft">Freightliner fleet</div>
+          <div class="hero-chip hero-chip-right" aria-hidden="true" data-i18n="hero.chipRight">24/7 dispatch</div>
+          <picture>
+            <source media="(max-width: 640px)" srcset="assets/new/pictures for web/03 1080x1350.webp" />
+            <source media="(max-width: 1180px)" srcset="assets/new/pictures for web/02 1920x1200.webp" />
+            <img src="assets/new/pictures for web/01 2880x1600.webp" alt="KMG Freightliner truck on the road" />
+          </picture>
         </div>
       </section>
 
       <section class="trust-bar">
-        <article class="trust-item reveal"><strong>48</strong><span>States with nationwide OTR coverage</span></article>
-        <article class="trust-item reveal"><strong>24/7</strong><span>Dispatch that stays reachable</span></article>
-        <article class="trust-item reveal"><strong>2022</strong><span>Built from real road experience</span></article>
-        <article class="trust-item reveal"><strong>OTR</strong><span>Long-haul consistency, not chaos</span></article>
+        <article class="trust-item reveal"><strong>2022</strong><span data-i18n="trust.one">Company operating since 2022</span></article>
+        <article class="trust-item reveal"><strong>24/7</strong><span data-i18n="trust.two">Top dispatchers and support</span></article>
+        <article class="trust-item reveal"><strong>Safety</strong><span data-i18n="trust.three">Strong safety department</span></article>
+        <article class="trust-item reveal"><strong>Shop</strong><span data-i18n="trust.four">Own service shop support</span></article>
       </section>
 
       <section class="wrap section" id="about">
         <div class="section-head reveal">
-          <p class="eye">About KMG</p>
-          <h2>This is what a trucking company should feel like.</h2>
+          <p class="eye" data-i18n="about.eye">About KMG</p>
+          <h2 data-i18n="about.title">Built for drivers, partners, and disciplined freight operations.</h2>
         </div>
         <div class="about-grid">
           <div class="media-card reveal">
-            <img src="assets/04_golden_hour_highway.png" alt="KMG truck at golden hour" />
+            <img src="assets/new/pictures for web/04 1600x2000.webp" alt="KMG company image" />
           </div>
           <div class="copy-block reveal">
-            <p>
-              KMG was built by people who know what weak dispatch, unclear pay, and inconsistent lanes cost
-              a driver. We designed the opposite: clean communication, reliable routes, and a company that
-              takes professionalism seriously.
+            <p data-i18n="about.copyOne">
+              KMG is a Philadelphia-based trucking company focused on clear communication, reliable lanes,
+              professional dispatch, strong safety, and long-term driver relationships.
             </p>
-            <blockquote>
-              “Most carriers treat drivers as an asset to be used. We treat them as the business itself.”
+            <blockquote data-i18n="about.quote">
+              Strong operations start with safety, equipment, and respect for the driver.
             </blockquote>
-            <p>
-              We run OTR routes across the lower 48 and focus on building a disciplined operation with real
-              long-term career potential for the right people.
+            <p data-i18n="about.copyTwo">
+              Our team is built around real road experience, Freightliner equipment, dedicated freight
+              opportunities, and service support that helps drivers stay moving.
             </p>
             <div class="inline-actions">
-              <a class="button button-dark" href="#apply">Apply to Drive</a>
-              <a class="button button-outline" href="#contacts">Contact Us</a>
+              <a class="button button-dark" href="index.html#careers" data-i18n="cta.driverOffers">Driver Offers</a>
+              <a class="button button-outline" href="index.html#contact" data-i18n="cta.contact">Contact Us</a>
             </div>
           </div>
         </div>
       </section>
 
-      <div class="divider"></div>
-
-      <section class="wrap section">
-        <div class="section-head reveal">
-          <p class="marker">New section</p>
-          <p class="eye">Why KMG</p>
-          <h2>What sets us apart from every other fleet.</h2>
-        </div>
-        <div class="why-grid">
-          <article class="why-item reveal"><span>01</span><h3>48-state OTR coverage</h3><p>Nationwide routes with stable support and fewer surprises.</p></article>
-          <article class="why-item reveal"><span>02</span><h3>Dispatch that answers</h3><p>24/7 human communication when something actually matters.</p></article>
-          <article class="why-item reveal"><span>03</span><h3>Transparent pay</h3><p>Clear terms before commitment and cleaner expectations after onboarding.</p></article>
-          <article class="why-item reveal"><span>04</span><h3>Clean MVR focus</h3><p>We look for professional drivers, not unrealistic checklists.</p></article>
-          <article class="why-item reveal"><span>05</span><h3>Built for long careers</h3><p>Our culture is designed to retain good drivers, not churn them.</p></article>
-          <article class="why-item reveal"><span>06</span><h3>Premium operating standards</h3><p>The discipline of a larger carrier with the attention of a focused team.</p></article>
-        </div>
-      </section>
-
-      <section class="full-image reveal">
-        <img src="assets/02_rear_rain_highway.png" alt="KMG trucks on a rainy highway" />
+      <section class="home-links">
+        <a class="home-link reveal" href="index.html#careers">
+          <span>01</span>
+          <strong data-i18n="offers.eye">Driver Offers</strong>
+          <p data-i18n="offers.copy">Dedicated USPS, Amazon, and regional dedicated lanes.</p>
+        </a>
+        <a class="home-link reveal" href="safety-service.html">
+          <span>02</span>
+          <strong data-i18n="safety.eye">Safety And Service</strong>
+          <p data-i18n="safety.title">Powerful safety and our own service shop.</p>
+        </a>
+        <a class="home-link reveal" href="safety-service.html#fleet">
+          <span>03</span>
+          <strong>Fleet</strong>
+          <p data-i18n="fleet.title">Freightliner trucks for serious OTR work.</p>
+        </a>
+        <a class="home-link reveal" href="partners.html">
+          <span>04</span>
+          <strong data-i18n="partners.eye">Partners</strong>
+          <p data-i18n="partners.title">Our partner network helps KMG move with confidence.</p>
+        </a>
       </section>
 
       <section class="wrap section" id="careers">
         <div class="section-head reveal">
-          <p class="eye">Driver Programs</p>
-          <h2>Choose the path that fits where you are now.</h2>
-          <p class="section-copy">
-            Structured like the reference design, but cleaned up with tighter cards, better spacing, and a
-            clearer recruiting hierarchy.
+          <p class="eye" data-i18n="offers.eye">Driver Offers</p>
+          <h2 data-i18n="offers.title">Real lanes, strong weekly gross, and support that answers.</h2>
+          <p class="section-copy" data-i18n="offers.copy">
+            KMG offers dedicated USPS, Amazon, and regional dedicated lanes across the West Side, Midwest,
+            East Side, and South Side.
           </p>
         </div>
-        <div class="program-grid">
-          <article class="program-card reveal" data-tilt>
-            <div class="program-head">
-              <h3>Company Drivers</h3>
-              <p>Strong fit for drivers who want structure and steady support.</p>
-            </div>
-            <div class="program-body">
-              <div><span>Pay model</span><strong>Up to 32% gross or $0.65 CPM</strong></div>
-              <div><span>Routes</span><strong>Nationwide OTR · 48 states</strong></div>
-              <div><span>Support</span><strong>24/7 dispatch access</strong></div>
-              <div><span>Entry path</span><strong>New and experienced CDL-A</strong></div>
-            </div>
-          </article>
-          <article class="program-card reveal" data-tilt>
-            <div class="program-head is-muted">
-              <h3>Lease Operators</h3>
-              <p>Structured for launch once internal systems are finalized.</p>
-            </div>
-            <div class="program-empty">
-              <strong>Program in development</strong>
-              <p>Use this area for future lease details, truck terms, settlement examples, and onboarding flow.</p>
-            </div>
-          </article>
-          <article class="program-card reveal" data-tilt>
-            <div class="program-head is-muted">
-              <h3>Owner Operators</h3>
-              <p>Partner model ready when equipment and backend ops are finalized.</p>
-            </div>
-            <div class="program-empty">
-              <strong>Coming soon</strong>
-              <p>Use this area for dispatch terms, requirements, payout structure, and partner expectations.</p>
-            </div>
-          </article>
+        <div class="offer-grid">
+          <article class="offer-card offer-card-main reveal" data-tilt><span data-i18n="offers.grossLabel">Weekly gross</span><strong>$12,000-$15,000</strong><p data-i18n="offers.grossCopy">High-performing lanes with weekly pay and clear expectations.</p></article>
+          <article class="offer-card reveal" data-tilt><span data-i18n="offers.percentLabel">Percent</span><strong>31%+</strong><p data-i18n="offers.percentCopy">31% of gross and up for qualified drivers.</p></article>
+          <article class="offer-card reveal" data-tilt><span data-i18n="offers.cpmLabel">CPM</span><strong>70 CPM+</strong><p data-i18n="offers.cpmCopy">CPM opportunities starting from 70 CPM.</p></article>
+          <article class="offer-card reveal" data-tilt><span data-i18n="offers.bonusLabel">Inspection bonuses</span><strong>$250 / $500 / $2000</strong><p data-i18n="offers.bonusCopy">Reward structure for clean inspections and safety performance.</p></article>
         </div>
+        <div class="lane-strip reveal"><span>USPS</span><span>Amazon</span><span data-i18n="offers.laneWest">West Side</span><span data-i18n="offers.laneMidwest">Midwest</span><span data-i18n="offers.laneEast">East Side</span><span data-i18n="offers.laneSouth">South Side</span><span data-i18n="offers.weekly">Weekly pay</span><span data-i18n="offers.dispatch">Top dispatchers</span></div>
       </section>
-
-      <div class="divider"></div>
-
-      <section class="wrap section">
-        <div class="section-head reveal">
-          <p class="eye">Requirements</p>
-          <h2>What we need from drivers.</h2>
-        </div>
-        <div class="requirement-grid">
-          <article class="requirement-item reveal"><span></span><p>Valid CDL Class A license</p></article>
-          <article class="requirement-item reveal"><span></span><p>Clean MVR and professional driving record</p></article>
-          <article class="requirement-item reveal"><span></span><p>OTR mindset with reliable communication</p></article>
-          <article class="requirement-item reveal"><span></span><p>Respect for safety, equipment, and schedules</p></article>
-        </div>
-      </section>
-
-      <div class="divider"></div>
 
       <section class="wrap section" id="apply">
         <div class="apply-grid">
           <div class="apply-copy reveal">
-            <p class="eye">Apply</p>
-            <h2>Start a serious conversation, not a messy application flow.</h2>
-            <p>
-              This section keeps the lead form structure from the reference concept, but the design is tighter
-              and more premium. The form is still frontend-only and ready for backend connection later.
-            </p>
-            <ul class="apply-points">
-              <li>24/7 dispatch culture</li>
-              <li>Transparent expectations</li>
-              <li>Nationwide OTR routes</li>
-              <li>Real response-ready form layout</li>
-            </ul>
+            <p class="eye" data-i18n="apply.eye">Apply</p>
+            <h2 data-i18n="apply.title">Start a serious conversation with KMG recruiting.</h2>
+            <p data-i18n="apply.copy">This form is ready as a frontend template today and can be connected to backend, CRM, email, or Telegram notifications later.</p>
+            <ul class="apply-points"><li data-i18n="apply.pointOne">Dedicated USPS and Amazon lanes</li><li data-i18n="apply.pointTwo">Weekly pay and strong gross potential</li><li data-i18n="apply.pointThree">Top dispatchers in the market</li><li data-i18n="apply.pointFour">Safety and service shop support</li></ul>
           </div>
-          <form class="form-box reveal" data-application-form>
-            <h3>Driver application template</h3>
-            <label class="field"><span>First name</span><input name="firstName" type="text" placeholder="First name" required /></label>
-            <label class="field"><span>Last name</span><input name="lastName" type="text" placeholder="Last name" required /></label>
-            <label class="field"><span>Email</span><input name="email" type="email" placeholder="driver@email.com" required /></label>
-            <label class="field"><span>Phone</span><input name="phone" type="tel" placeholder="+1 (555) 000-0000" required /></label>
-            <label class="field field-full"><span>Experience</span><input name="experience" type="text" placeholder="2 years OTR" required /></label>
-            <button class="form-submit" type="submit">Submit application</button>
-            <p class="form-status" role="status" data-application-status></p>
-          </form>
-        </div>
-      </section>
-
-      <section class="cta-band">
-        <div class="wrap cta-inner reveal">
-          <h2>For drivers who want a cleaner standard.</h2>
-          <p>Built to feel premium, direct, and confident, just like the reference landing page but more polished.</p>
-          <div class="hero-actions">
-            <a class="button button-light" href="#apply">Apply to Drive</a>
-            <a class="button button-dark-outline" href="#contacts">Talk to KMG</a>
+          <div class="form-stack reveal">
+            <div class="apply-visual media-card"><img src="assets/new/pictures for web/19 1584x396.webp" alt="KMG recruiting banner" /></div>
+            <form class="form-box" data-application-form>
+              <h3 data-i18n="apply.formTitle">Driver application template</h3>
+              <label class="field"><span data-i18n="forms.firstName">First name</span><input name="firstName" type="text" placeholder="First name" data-i18n-attr="placeholder:forms.firstName" required /></label>
+              <label class="field"><span data-i18n="forms.lastName">Last name</span><input name="lastName" type="text" placeholder="Last name" data-i18n-attr="placeholder:forms.lastName" required /></label>
+              <label class="field"><span data-i18n="forms.email">Email</span><input name="email" type="email" placeholder="driver@email.com" required /></label>
+              <label class="field"><span data-i18n="forms.phone">Phone</span><input name="phone" type="tel" placeholder="+1 (555) 000-0000" required /></label>
+              <label class="field field-full"><span data-i18n="forms.experience">Experience</span><input name="experience" type="text" placeholder="2 years OTR" data-i18n-attr="placeholder:forms.experiencePlaceholder" required /></label>
+              <button class="form-submit" type="submit" data-i18n="forms.submitApplication">Submit application</button>
+              <p class="form-status" role="status" data-application-status></p>
+            </form>
           </div>
         </div>
       </section>
 
-      <section class="wrap section">
-        <div class="section-head reveal">
-          <p class="marker">New section · social proof</p>
-          <p class="eye">What drivers say</p>
-          <h2>Straight from the people who work with us.</h2>
+      <section class="reviews-band">
+        <div class="wrap section-head reveal">
+          <p class="eye eye-dark" data-i18n="reviews.eye">Reviews</p>
+          <h2 class="dark-title" data-i18n="reviews.title">Five-star feedback from drivers and partners.</h2>
         </div>
-        <div class="review-grid">
-          <article class="review-card reveal" data-tilt>
-            <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
-            <p>“Dispatch actually answers. That alone puts KMG in a different category from fleets that leave drivers guessing.”</p>
-            <div class="review-author"><strong>Driver name</strong><span>Company Driver · OTR</span></div>
-          </article>
-          <article class="review-card reveal" data-tilt>
-            <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
-            <p>“Clean communication, better standards, and a company that feels intentional about keeping good people long-term.”</p>
-            <div class="review-author"><strong>Driver name</strong><span>Company Driver · CDL-A</span></div>
-          </article>
-          <article class="review-card reveal" data-tilt>
-            <div class="stars"><span></span><span></span><span></span><span></span><span></span></div>
-            <p>“As a freight partner, KMG is one of the teams you can trust to communicate before problems become problems.”</p>
-            <div class="review-author"><strong>Partner name</strong><span>Broker / logistics partner</span></div>
-          </article>
-        </div>
-      </section>
-
-      <div class="divider"></div>
-
-      <section class="wrap section">
-        <div class="section-head reveal">
-          <p class="eye">History</p>
-          <h2>Built from road experience, not a boardroom.</h2>
-        </div>
-        <div class="history-grid">
-          <div class="history-copy reveal">
-            <p class="section-copy">
-              KMG started in 2022 with one clear focus: build a trucking operation that drivers actually want
-              to stay in long-term.
-            </p>
-            <div class="timeline">
-              <article><span>Foundation · 2022</span><p>Professional standards from day one.</p></article>
-              <article><span>Growth</span><p>Expanding recruitment, lane coverage, and partner relationships.</p></article>
-              <article><span>Future</span><p>Lease operator and owner operator systems in development.</p></article>
-            </div>
+        <div class="review-carousel reveal" aria-label="KMG reviews">
+          <div class="review-track">
+            <article class="review-card"><div class="stars" aria-label="5 stars"><span></span><span></span><span></span><span></span><span></span></div><p data-i18n="reviews.one">Dispatch is one of the strongest parts of KMG. They answer fast and keep the work moving.</p><div class="review-author"><strong>Company Driver</strong><span>OTR</span></div></article>
+            <article class="review-card"><div class="stars" aria-label="5 stars"><span></span><span></span><span></span><span></span><span></span></div><p data-i18n="reviews.two">The safety team is serious and professional. That gives drivers more confidence on the road.</p><div class="review-author"><strong>Driver Review</strong><span>CDL-A</span></div></article>
+            <article class="review-card"><div class="stars" aria-label="5 stars"><span></span><span></span><span></span><span></span><span></span></div><p data-i18n="reviews.three">KMG keeps communication clean. As a partner, that makes a real difference.</p><div class="review-author"><strong>Logistics Partner</strong><span>Broker Network</span></div></article>
+            <article class="review-card"><div class="stars" aria-label="5 stars"><span></span><span></span><span></span><span></span><span></span></div><p data-i18n="reviews.four">New trucks, strong lanes, and weekly pay make the program feel organized.</p><div class="review-author"><strong>Company Driver</strong><span>Dedicated Lanes</span></div></article>
+            <article class="review-card"><div class="stars" aria-label="5 stars"><span></span><span></span><span></span><span></span><span></span></div><p data-i18n="reviews.one">Dispatch is one of the strongest parts of KMG. They answer fast and keep the work moving.</p><div class="review-author"><strong>Company Driver</strong><span>OTR</span></div></article>
+            <article class="review-card"><div class="stars" aria-label="5 stars"><span></span><span></span><span></span><span></span><span></span></div><p data-i18n="reviews.two">The safety team is serious and professional. That gives drivers more confidence on the road.</p><div class="review-author"><strong>Driver Review</strong><span>CDL-A</span></div></article>
           </div>
-          <div class="media-card reveal">
-            <img src="assets/03_truck_stop_daylight.png" alt="KMG truck at a truck stop" />
-          </div>
-        </div>
-      </section>
-
-      <section class="partners-band" id="partners">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <p class="eye eye-dark">Partners</p>
-            <h2 class="dark-title">Let’s move freight and opportunities together.</h2>
-            <p class="dark-copy">
-              We work with carriers, shippers, brokers, maintenance partners, insurance providers, and technology
-              vendors who share our standards.
-            </p>
-          </div>
-          <div class="partner-image reveal">
-            <img src="assets/partners/partners.png" alt="KMG partners visual" />
-          </div>
-          <div class="partner-strip reveal">
-            <div>Carriers & shippers</div>
-            <div>Freight brokers</div>
-            <div>Maintenance & repair</div>
-            <div>Insurance vendors</div>
-          </div>
-          <div class="partner-marquee" aria-hidden="true">
-            <div class="partner-marquee-track">
-              <span>Carrier partnerships</span>
-              <span>Broker network</span>
-              <span>Maintenance support</span>
-              <span>Insurance ecosystem</span>
-              <span>Carrier partnerships</span>
-              <span>Broker network</span>
-              <span>Maintenance support</span>
-              <span>Insurance ecosystem</span>
-            </div>
-          </div>
-          <div class="band-action reveal">
-            <a class="button button-light" href="#contacts">Become a Partner</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="wrap section" id="shop">
-        <div class="section-head reveal">
-          <p class="eye">Shop</p>
-          <h2>KMG gear and branded items.</h2>
-          <p class="section-copy">Merch section kept from the previous structure, now styled closer to the landing reference.</p>
-        </div>
-        <div class="shop-grid">
-          <article class="shop-card reveal"><img src="assets/shop/shop1.png" alt="KMG product 1" /><div><h3>KMG Essential</h3><p>Driver-ready branded item</p></div></article>
-          <article class="shop-card reveal"><img src="assets/shop/shop2.png" alt="KMG product 2" /><div><h3>KMG Roadwear</h3><p>Clean merchandise</p></div></article>
-          <article class="shop-card reveal"><img src="assets/shop/shop3.png" alt="KMG product 3" /><div><h3>KMG Utility</h3><p>Cart integration ready</p></div></article>
-          <article class="shop-card reveal"><img src="assets/shop/shop4.png" alt="KMG product 4" /><div><h3>KMG Signature</h3><p>Brand-building item</p></div></article>
-        </div>
-      </section>
-
-      <div class="divider"></div>
-
-      <section class="wrap section" id="blogs">
-        <div class="section-head reveal">
-          <p class="eye">Blog</p>
-          <h2>From the road and the operation.</h2>
-        </div>
-        <div class="blog-grid">
-          <article class="blog-card reveal"><img src="assets/02_rear_rain_highway.png" alt="Operations" /><div><span>Operations</span><h3>How KMG approaches safe freight movement on long-haul routes</h3><small>Add publish date</small></div></article>
-          <article class="blog-card reveal"><img src="assets/03_truck_stop_daylight.png" alt="Drivers" /><div><span>Drivers</span><h3>What makes a stronger driver-company relationship</h3><small>Add publish date</small></div></article>
-          <article class="blog-card reveal"><img src="assets/Freightliner Cascadia in twilight rain.png" alt="Company" /><div><span>Company</span><h3>Why brand trust matters in modern logistics</h3><small>Add publish date</small></div></article>
-          <article class="blog-card reveal"><div class="blog-placeholder">Blog photo when article is published</div><div><span>Careers</span><h3>What new CDL-A drivers should know before choosing a company</h3><small>Add publish date</small></div></article>
-        </div>
-      </section>
-
-      <div class="divider"></div>
-
-      <section class="wrap section">
-        <div class="section-head reveal">
-          <p class="marker">New section · FAQ / SEO</p>
-          <p class="eye">Common questions</p>
-          <h2>Everything you need to know before applying.</h2>
-        </div>
-        <div class="faq-list" data-faq-list>
-          <article class="faq-item reveal"><button class="faq-question" type="button">How much do KMG company drivers earn?<span>+</span></button><div class="faq-answer"><p>Company drivers can be positioned around up to 32% gross or $0.65 CPM, depending on the final program structure you publish.</p></div></article>
-          <article class="faq-item reveal"><button class="faq-question" type="button">Do you hire new CDL-A drivers?<span>+</span></button><div class="faq-answer"><p>Yes. The current site is structured to speak to both new and experienced CDL-A candidates with a clean MVR focus.</p></div></article>
-          <article class="faq-item reveal"><button class="faq-question" type="button">What routes does KMG run?<span>+</span></button><div class="faq-answer"><p>KMG is positioned as a nationwide OTR company covering the lower 48 states with stable lane support.</p></div></article>
-          <article class="faq-item reveal"><button class="faq-question" type="button">How does dispatch work at KMG?<span>+</span></button><div class="faq-answer"><p>Dispatch is framed as a 24/7 reachable support function, which is one of the strongest trust signals in the whole design.</p></div></article>
-        </div>
-      </section>
-
-      <div class="divider"></div>
-
-      <section class="wrap section" id="contacts">
-        <div class="section-head reveal">
-          <p class="eye">Contact</p>
-          <h2>Get in touch.</h2>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-details reveal">
-            <article><span>Phone</span><strong>+1 (555) 000-0000</strong></article>
-            <article><span>Email</span><strong>dispatch@kmgllc.com</strong></article>
-            <article><span>Location</span><strong>United States</strong></article>
-            <article><span>Hours</span><strong>Mon - Fri · 8:00 AM - 6:00 PM</strong></article>
-            <article><span>Dispatch</span><strong>24/7 for active drivers</strong></article>
-          </div>
-          <form class="contact-form reveal" data-contact-form>
-            <label class="field"><span>Name</span><input name="name" type="text" placeholder="Your name" required /></label>
-            <label class="field"><span>Email</span><input name="email" type="email" placeholder="you@email.com" required /></label>
-            <label class="field"><span>Phone</span><input name="phone" type="tel" placeholder="+1 (555) 000-0000" /></label>
-            <label class="field"><span>Subject</span><select name="subject"><option>Driver inquiry</option><option>Partner inquiry</option><option>General question</option></select></label>
-            <label class="field field-full"><span>Message</span><textarea name="message" rows="4" placeholder="How can we help?"></textarea></label>
-            <button class="form-submit" type="submit">Send message</button>
-            <p class="form-status" role="status" data-contact-status></p>
-          </form>
         </div>
       </section>
 
       <section class="seo-band">
         <div class="wrap seo-inner reveal">
           <div>
-            <p class="marker marker-light">SEO text</p>
-            <p class="eye">About KMG Trucking</p>
+            <p class="marker marker-light">KMG</p>
+            <p class="eye" data-i18n="seo.eye">About KMG Trucking</p>
           </div>
-          <p>
-            Kayili M Group LLC is a premium OTR trucking company operating since 2022 across the lower 48
-            states. The site is positioned for CDL Class A recruiting, partner relationships, and fleet brand
-            trust, with room for backend systems, applications, and content publishing later.
+          <p data-i18n="seo.copy">
+            Kayili M Group LLC is a premium OTR trucking company operating since 2022 from Philadelphia.
+            The site is positioned for CDL Class A recruiting, partner relationships, safety trust, and fleet
+            brand growth.
           </p>
+        </div>
+      </section>
+
+      <section class="map-band" id="contact">
+        <div class="wrap section">
+          <div class="section-head reveal"><p class="eye" data-i18n="contact.eye">Contact</p><h2 data-i18n="contact.title">Visit or contact KMG in Philadelphia.</h2></div>
+          <div class="contact-grid contact-grid-simple">
+            <div class="contact-stack reveal">
+              <div class="contact-details">
+                <article><span data-i18n="contact.phone">Phone</span><strong><a href="tel:+12674539603">+1 267 453-96-03</a></strong></article>
+                <article><span data-i18n="contact.email">Email</span><strong><a href="mailto:dispatch@kmgllc.com">dispatch@kmgllc.com</a></strong></article>
+                <article><span data-i18n="contact.address">Address</span><strong>84 Bustleton Pike, Philadelphia, PA</strong></article>
+                <article><span data-i18n="contact.hours">Hours</span><strong data-i18n="contact.hoursValue">Mon - Fri, 8:00 AM - 6:00 PM</strong></article>
+                <article><span data-i18n="contact.dispatch">Dispatch</span><strong data-i18n="contact.dispatchValue">24/7 for active drivers</strong></article>
+              </div>
+              <div class="map-card"><iframe title="KMG Philadelphia location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=84%20Bustleton%20Pike%2C%20Philadelphia%2C%20PA&output=embed"></iframe></div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -410,32 +255,44 @@
         <div class="footer-top">
           <div>
             <div class="footer-logo">
-              <img src="assets/kmg-logo.png" alt="KMG LLC" width="42" height="42" />
+              <img
+                src="assets/new/pictures for web/22 logo vector/logo_dark.svg"
+                alt="KMG LLC"
+                width="96"
+                height="96"
+                data-logo
+                data-logo-light="assets/new/pictures for web/22 logo vector/logo_dark.svg"
+                data-logo-dark="assets/new/pictures for web/22 logo vector/logo_light.svg"
+              />
               <span>KMG</span>
             </div>
-            <p class="footer-desc">Kayili M Group LLC is a driver-first logistics operation built on road discipline and long-term careers since 2022.</p>
+            <p class="footer-desc" data-i18n="footer.desc">Kayili M Group LLC is a driver-first logistics operation built on safety, service, dispatch, and long-term careers since 2022.</p>
           </div>
           <div class="footer-cols">
             <div class="footer-col">
-              <h3>Company</h3>
-              <a href="#about">About</a><a href="#blogs">Blog</a><a href="#contacts">Contact</a>
+              <h3 data-i18n="footer.company">Company</h3>
+              <a href="index.html">Home</a><a href="news.html" data-i18n="nav.blog">News</a><a href="index.html#contact" data-i18n="nav.contact">Contact</a>
             </div>
             <div class="footer-col">
-              <h3>Drivers</h3>
-              <a href="#apply">Apply to Drive</a><a href="#careers">Company Drivers</a><a href="#careers">Lease Operators</a>
+              <h3 data-i18n="footer.drivers">Drivers</h3>
+              <a href="index.html#apply" data-i18n="cta.apply">Apply to Drive</a><a href="index.html#careers" data-i18n="nav.offers">Offers</a><a href="safety-service.html" data-i18n="nav.safety">Safety</a>
             </div>
             <div class="footer-col">
-              <h3>Business</h3>
-              <a href="#partners">Partners</a><a href="#shop">Shop</a><a href="mailto:dispatch@kmgllc.com">dispatch@kmgllc.com</a>
+              <h3 data-i18n="footer.business">Business</h3>
+              <a href="partners.html" data-i18n="nav.partners">Partners</a><a href="tel:+12674539603">+1 267 453-96-03</a><a href="mailto:dispatch@kmgllc.com">dispatch@kmgllc.com</a>
             </div>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>© 2026 Kayili M Group LLC. All rights reserved.</p>
-          <p>CDL-A · OTR · 48 States · Clean MVR Focus</p>
+          <p data-i18n="footer.rights">© 2026 Kayili M Group LLC. All rights reserved.</p>
+          <p data-i18n="footer.tags">CDL-A · OTR · Freightliner · Safety · Service Shop</p>
         </div>
       </div>
     </footer>
+
+    <a class="telegram-float" href="https://t.me/ParvinaSafetykmg" target="_blank" rel="noopener" data-telegram-link aria-label="Message KMG HR on Telegram">
+      <span>Telegram</span>
+    </a>
 
     <script src="src/scripts/main.js" defer></script>
   </body>
