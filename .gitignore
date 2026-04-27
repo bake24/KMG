@@ -1,0 +1,15 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# OS and sidecar files
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# Logs and temporary files
+*.log
+.tmp_ref/
+node_modules/

@@ -1,0 +1,13 @@
+{
+  "name": "kmg-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "KMG company website with Vercel test API and Hetzner-ready backend.",
+  "scripts": {
+    "start": "node server/server.js",
+    "check": "node --check src/scripts/main.js && node --check api/telegram-lead.js && node --check server/server.js && node --check server/telegram.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
