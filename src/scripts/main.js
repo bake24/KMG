@@ -572,6 +572,7 @@ Object.assign(translations.en, {
   "trucking.processOneCopy": "Driver submits a Website Lead with contact details and OTR experience.",
   "trucking.processTwoTitle": "Qualify",
   "trucking.processTwoCopy": "Recruiting reviews fit, availability, lanes, and pay expectations.",
+  "trucking.processThreeTitle": "Dispatch",
   "trucking.processThreeCopy": "Driver receives lane plan, communication expectations, and support contacts.",
   "trucking.processFourTitle": "Run",
   "trucking.processFourCopy": "Safety, dispatch, and shop support help keep the truck moving.",
@@ -744,6 +745,7 @@ Object.assign(translations.ru, {
   "trucking.processOneCopy": "Driver отправляет Website Lead с contact details и OTR experience.",
   "trucking.processTwoTitle": "Qualify",
   "trucking.processTwoCopy": "Recruiting проверяет fit, availability, lanes и pay expectations.",
+  "trucking.processThreeTitle": "Dispatch",
   "trucking.processThreeCopy": "Driver получает lane plan, communication expectations и support contacts.",
   "trucking.processFourTitle": "Run",
   "trucking.processFourCopy": "Safety, dispatch и shop support помогают truck оставаться в движении.",
@@ -916,6 +918,7 @@ Object.assign(translations.uz, {
   "trucking.processOneCopy": "Driver contact details va OTR experience bilan Website Lead yuboradi.",
   "trucking.processTwoTitle": "Qualify",
   "trucking.processTwoCopy": "Recruiting fit, availability, lanes va pay expectationsni ko'rib chiqadi.",
+  "trucking.processThreeTitle": "Dispatch",
   "trucking.processThreeCopy": "Driver lane plan, communication expectations va support contacts oladi.",
   "trucking.processFourTitle": "Run",
   "trucking.processFourCopy": "Safety, dispatch va shop support truck moving bo'lishiga yordam beradi.",
@@ -1169,13 +1172,19 @@ applicationForm?.addEventListener("submit", async (event) => {
 
   const submitButton = applicationForm.querySelector("[type='submit']");
   const data = new FormData(applicationForm);
-  const firstName = String(data.get("firstName") || "Driver").trim();
+  const firstName = String(data.get("firstName") || "").trim();
+  const phone = String(data.get("phone") || "").trim();
+
+  if (!firstName || !phone) {
+    applicationStatus.textContent = t("forms.applicationError");
+    return;
+  }
 
   const payload = {
     firstName,
     lastName: String(data.get("lastName") || "").trim(),
     email: String(data.get("email") || "").trim(),
-    phone: String(data.get("phone") || "").trim(),
+    phone,
     experience: String(data.get("experience") || "").trim(),
     company: String(data.get("company") || "").trim(),
     language: currentLang,
@@ -1186,11 +1195,16 @@ applicationForm?.addEventListener("submit", async (event) => {
   submitButton.disabled = true;
 
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15_000);
+
     const response = await fetch("/api/telegram-lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
+      signal: controller.signal,
     });
+    clearTimeout(timeoutId);
 
     if (!response.ok) {
       let details = {};

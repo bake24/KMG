@@ -3,13 +3,24 @@ const { sendTelegramLead } = require("./telegram");
 
 const port = Number(process.env.PORT || 3000);
 
-const sendJson = (res, statusCode, body) => {
-  res.writeHead(statusCode, {
+const allowedOrigins = [
+  process.env.ALLOWED_ORIGIN,
+  "http://localhost:3000",
+  "http://localhost",
+].filter(Boolean);
+
+const sendJson = (res, statusCode, body, requestOrigin = "") => {
+  const corsOrigin = allowedOrigins.includes(requestOrigin) ? requestOrigin : "";
+  const headers = {
     "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
-  });
+  };
+  if (corsOrigin) {
+    headers["Access-Control-Allow-Origin"] = corsOrigin;
+    headers["Vary"] = "Origin";
+  }
+  res.writeHead(statusCode, headers);
   res.end(JSON.stringify(body));
 };
 
@@ -37,33 +48,35 @@ const readJson = (req) =>
   });
 
 const server = http.createServer(async (req, res) => {
+  const origin = req.headers.origin || "";
+
   if (req.method === "OPTIONS") {
-    sendJson(res, 204, {});
+    sendJson(res, 204, {}, origin);
     return;
   }
 
   if (req.url === "/api/health") {
-    sendJson(res, 200, { ok: true });
+    sendJson(res, 200, { ok: true }, origin);
     return;
   }
 
   if (req.url !== "/api/telegram-lead") {
-    sendJson(res, 404, { error: "Not found" });
+    sendJson(res, 404, { error: "Not found" }, origin);
     return;
   }
 
   if (req.method !== "POST") {
-    sendJson(res, 405, { error: "Method not allowed" });
+    sendJson(res, 405, { error: "Method not allowed" }, origin);
     return;
   }
 
   try {
     const payload = await readJson(req);
     await sendTelegramLead(payload);
-    sendJson(res, 200, { ok: true });
+    sendJson(res, 200, { ok: true }, origin);
   } catch (error) {
-    const statusCode = error.statusCode || (error.message === "Payload too large" ? 413 : 400);
-    sendJson(res, statusCode, { error: error.message || "Lead delivery failed" });
+    const statusCode = error.statusCode ?? (error.message === "Payload too large" ? 413 : 400);
+    sendJson(res, statusCode, { error: "Lead delivery failed" }, origin);
   }
 });
 
