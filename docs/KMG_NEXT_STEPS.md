@@ -49,3 +49,20 @@
 
 - Ignore service sidecar files like `._*`.
 - Keep old unused assets only if they may be needed as fallback.
+
+## 9. UX Review Notes
+
+- Home should read as a company overview first, not as a menu of pages.
+- Service directions should appear one after another: Trucking, Shop, Brokerage, Consulting.
+- Each service block should include: short positioning, proof points, capabilities, and one clear CTA.
+- Top navigation should stay minimal: Home, Services, News, Contact, Apply to Drive.
+- Dedicated service pages should go deeper only after the user chooses a direction.
+
+## 10. Future Content Gaps
+
+- Add real DOT / MC information if public display is approved.
+- Add real fleet counts, shop capacity, and service workflow when confirmed.
+- Add real brokerage lane examples and partner types.
+- Add consulting packages or consultation request types.
+- Add company privacy policy before collecting more sensitive lead data.
+- Add real case studies once KMG has approved examples.

@@ -5,19 +5,27 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://replace_me_domain.com/safety-service.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://replace_me_domain.com/partners.html</loc>
+    <loc>https://replace_me_domain.com/trucking.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://replace_me_domain.com/shop.html</loc>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://replace_me_domain.com/brokerage.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://replace_me_domain.com/consulting.html</loc>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://replace_me_domain.com/news.html</loc>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://replace_me_domain.com/privacy.html</loc>
+    <priority>0.3</priority>
   </url>
 </urlset>
