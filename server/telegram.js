@@ -67,6 +67,7 @@ const sendTelegramLead = async (payload = {}, env = process.env) => {
   if (botToken === "replace_me" || chatId === "replace_me") {
     const error = new Error("Telegram credentials are not configured");
     error.statusCode = 500;
+    error.code = "TELEGRAM_ENV_MISSING";
     throw error;
   }
 
@@ -75,6 +76,7 @@ const sendTelegramLead = async (payload = {}, env = process.env) => {
   if (!firstName || !phone) {
     const error = new Error("First name and phone are required");
     error.statusCode = 400;
+    error.code = "LEAD_REQUIRED_FIELDS_MISSING";
     throw error;
   }
 
@@ -90,8 +92,17 @@ const sendTelegramLead = async (payload = {}, env = process.env) => {
   });
 
   if (!response.ok) {
-    const error = new Error("Telegram delivery failed");
+    let details = "";
+    try {
+      const data = await response.json();
+      details = data.description ? `: ${data.description}` : "";
+    } catch {
+      details = "";
+    }
+
+    const error = new Error(`Telegram delivery failed${details}`);
     error.statusCode = 502;
+    error.code = "TELEGRAM_DELIVERY_FAILED";
     throw error;
   }
 

@@ -395,6 +395,121 @@ const translations = {
   },
 };
 
+Object.assign(translations.en, {
+  "nav.services": "Services",
+  "home.hero.eye": "KMG Group LLC / Philadelphia transportation company",
+  "home.hero.title": "A transportation company built around fleet, service, brokerage, and safety.",
+  "home.hero.copy": "KMG connects trucking operations, Freightliner fleet support, repair and inspection services, brokerage lanes, and consulting for carriers who want cleaner systems.",
+  "home.hero.servicesCta": "Explore Services",
+  "home.trust.fleet": "Fleet and carrier network",
+  "home.trust.directions": "Core business directions",
+  "home.trust.dispatch": "Dispatch and driver support",
+  "home.trust.year": "Operating since 2020",
+  "home.services.eye": "Services",
+  "home.services.title": "Four directions, one KMG operating standard.",
+  "home.services.copy": "Each direction has its own page with deeper information, numbers, service details, and next steps.",
+  "home.more": "More Details",
+  "home.trucking.title": "Trucking",
+  "home.trucking.copy": "The core KMG operation: drivers, fleet network, dedicated lanes, dispatch, weekly gross potential, safety, and reviews.",
+  "home.shop.title": "Shop",
+  "home.shop.copy": "The service side of KMG: repair support, RS workflow, invoices, inspection readiness, documentation, and uptime control.",
+  "home.brokerage.title": "Brokerage",
+  "home.brokerage.copy": "The freight connection layer: street lanes, broker relationships, partner coverage, freight communication, and shipment visibility.",
+  "home.consulting.title": "Consulting",
+  "home.consulting.copy": "The systems side: safety consulting, dispatch process, fleet setup, carrier setup, audits, compliance, and operational cleanup.",
+});
+
+Object.assign(translations.ru, {
+  "meta.title": "KMG LLC | Trucking, Shop, Brokerage, Consulting",
+  "meta.description": "KMG - transportation group \u0432 Philadelphia: trucking, service shop, brokerage \u0438 consulting services.",
+  "meta.ogTitle": "KMG LLC | Trucking, Shop, Brokerage, Consulting",
+  "meta.ogDescription": "Transportation company \u0432\u043e\u043a\u0440\u0443\u0433 fleet operations, driver recruiting, repair support, brokerage \u0438 safety consulting.",
+  "a11y.skip": "\u041f\u0435\u0440\u0435\u0439\u0442\u0438 \u043a \u043a\u043e\u043d\u0442\u0435\u043d\u0442\u0443",
+  "a11y.openNav": "\u041e\u0442\u043a\u0440\u044b\u0442\u044c \u043c\u0435\u043d\u044e",
+  "nav.services": "\u0423\u0441\u043b\u0443\u0433\u0438",
+  "nav.blog": "News",
+  "nav.contact": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b",
+  "theme.light": "\u0421\u0432\u0435\u0442\u043b\u0430\u044f",
+  "theme.dark": "\u0422\u0435\u043c\u043d\u0430\u044f",
+  "cta.apply": "Apply to Drive",
+  "home.hero.eye": "KMG Group LLC / transportation company \u0432 Philadelphia",
+  "home.hero.title": "\u041a\u043e\u043c\u043f\u0430\u043d\u0438\u044f, \u043f\u043e\u0441\u0442\u0440\u043e\u0435\u043d\u043d\u0430\u044f \u0432\u043e\u043a\u0440\u0443\u0433 fleet, service, brokerage \u0438 safety.",
+  "home.hero.copy": "KMG \u043e\u0431\u044a\u0435\u0434\u0438\u043d\u044f\u0435\u0442 trucking operations, Freightliner fleet support, repair and inspection services, brokerage lanes \u0438 consulting \u0434\u043b\u044f carriers, \u043a\u043e\u0442\u043e\u0440\u044b\u043c \u043d\u0443\u0436\u043d\u044b \u0447\u0438\u0441\u0442\u044b\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u044b.",
+  "home.hero.servicesCta": "\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c services",
+  "home.trust.fleet": "Fleet \u0438 carrier network",
+  "home.trust.directions": "\u041e\u0441\u043d\u043e\u0432\u043d\u044b\u0435 business directions",
+  "home.trust.dispatch": "Dispatch \u0438 driver support",
+  "home.trust.year": "\u0420\u0430\u0431\u043e\u0442\u0430\u0435\u043c \u0441 2020",
+  "home.services.eye": "\u0423\u0441\u043b\u0443\u0433\u0438",
+  "home.services.title": "\u0427\u0435\u0442\u044b\u0440\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u044f, \u043e\u0434\u0438\u043d KMG operating standard.",
+  "home.services.copy": "\u0423 \u043a\u0430\u0436\u0434\u043e\u0433\u043e direction \u0435\u0441\u0442\u044c \u0441\u0432\u043e\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430 \u0441 \u0434\u0435\u0442\u0430\u043b\u044f\u043c\u0438, \u0446\u0438\u0444\u0440\u0430\u043c\u0438, services \u0438 next steps.",
+  "home.more": "\u041f\u043e\u0434\u0440\u043e\u0431\u043d\u0435\u0435",
+  "home.trucking.title": "Trucking",
+  "home.trucking.copy": "\u041e\u0441\u043d\u043e\u0432\u0430 KMG: drivers, fleet network, dedicated lanes, dispatch, weekly gross potential, safety \u0438 reviews.",
+  "home.shop.title": "Shop",
+  "home.shop.copy": "Service side KMG: repair support, RS workflow, invoices, inspection readiness, documentation \u0438 uptime control.",
+  "home.brokerage.title": "Brokerage",
+  "home.brokerage.copy": "Freight connection layer: street lanes, broker relationships, partner coverage, freight communication \u0438 shipment visibility.",
+  "home.consulting.title": "Consulting",
+  "home.consulting.copy": "Systems side: safety consulting, dispatch process, fleet setup, carrier setup, audits, compliance \u0438 operational cleanup.",
+  "apply.formTitle": "Driver application",
+  "forms.firstName": "\u0418\u043c\u044f",
+  "forms.lastName": "\u0424\u0430\u043c\u0438\u043b\u0438\u044f",
+  "forms.email": "Email",
+  "forms.phone": "\u0422\u0435\u043b\u0435\u0444\u043e\u043d",
+  "forms.experience": "Experience",
+  "forms.experiencePlaceholder": "2 years OTR",
+  "forms.submitApplication": "\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u044f\u0432\u043a\u0443",
+  "forms.sending": "\u041e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u043c Website Lead...",
+  "forms.applicationSuccess": "{name}, \u0441\u043f\u0430\u0441\u0438\u0431\u043e. Website Lead \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d KMG HR.",
+  "forms.applicationError": "Website Lead \u043d\u0435 \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u043b\u0441\u044f. \u041f\u0440\u043e\u0432\u0435\u0440\u044c\u0442\u0435 phone, Telegram \u0438\u043b\u0438 Vercel logs.",
+  "reviews.eye": "Reviews",
+  "reviews.title": "Five-star feedback \u043e\u0442 drivers \u0438 partners.",
+  "reviews.one": "Dispatch \u0431\u044b\u0441\u0442\u0440\u043e \u043e\u0442\u0432\u0435\u0447\u0430\u0435\u0442 \u0438 \u0434\u0435\u0440\u0436\u0438\u0442 \u043d\u0435\u0434\u0435\u043b\u044e organized. \u0414\u043b\u044f OTR \u044d\u0442\u043e \u0432\u0430\u0436\u043d\u043e.",
+  "reviews.two": "Safety \u0438 service shop support \u0437\u0434\u0435\u0441\u044c \u0441\u0435\u0440\u044c\u0435\u0437\u043d\u044b\u0435.",
+  "reviews.three": "Communication \u0441 KMG clean \u0438 professional.",
+  "reviews.four": "New Freightliner trucks, strong lanes \u0438 weekly pay \u0434\u0435\u043b\u0430\u044e\u0442 program organized.",
+  "contact.eye": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u044b",
+  "contact.title": "Visit or contact KMG in Philadelphia.",
+  "contact.phone": "\u0422\u0435\u043b\u0435\u0444\u043e\u043d",
+  "contact.email": "Email",
+  "contact.address": "\u0410\u0434\u0440\u0435\u0441",
+  "contact.hours": "\u0427\u0430\u0441\u044b",
+  "contact.hoursValue": "Mon - Fri, 8:00 AM - 6:00 PM",
+  "contact.dispatch": "Dispatch",
+  "contact.dispatchValue": "24/7 for active drivers",
+  "footer.desc": "Kayili M Group LLC - transportation group built on safety, service, dispatch and long-term careers.",
+  "footer.company": "Company",
+  "footer.business": "Business",
+  "footer.rights": "\u00a9 2026 Kayili M Group LLC. All rights reserved.",
+  "telegram.label": "Telegram",
+  "telegram.message": "\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439\u0442\u0435, \u043f\u0438\u0448\u0443 \u0441 \u0441\u0430\u0439\u0442\u0430 KMG. \u0425\u043e\u0442\u0435\u043b \u0431\u044b \u0443\u0437\u043d\u0430\u0442\u044c -",
+});
+
+Object.assign(translations.uz, {
+  "nav.services": "Services",
+  "home.hero.eye": "KMG Group LLC / Philadelphia transportation company",
+  "home.hero.title": "Fleet, service, brokerage va safety asosida qurilgan transportation company.",
+  "home.hero.copy": "KMG trucking operations, Freightliner fleet support, repair and inspection services, brokerage lanes va consultingni bitta tizimga bog'laydi.",
+  "home.hero.servicesCta": "Servicesni ko'rish",
+  "home.trust.fleet": "Fleet va carrier network",
+  "home.trust.directions": "Asosiy business directions",
+  "home.trust.dispatch": "Dispatch va driver support",
+  "home.trust.year": "2020 yildan beri",
+  "home.services.eye": "Services",
+  "home.services.title": "To'rt yo'nalish, bitta KMG operating standard.",
+  "home.services.copy": "Har bir direction alohida sahifada batafsil ma'lumot, raqamlar, service details va next steps bilan ochiladi.",
+  "home.more": "Batafsil",
+  "home.trucking.title": "Trucking",
+  "home.trucking.copy": "KMGning asosiy operationi: drivers, fleet network, dedicated lanes, dispatch, weekly gross potential, safety va reviews.",
+  "home.shop.title": "Shop",
+  "home.shop.copy": "KMG service side: repair support, RS workflow, invoices, inspection readiness, documentation va uptime control.",
+  "home.brokerage.title": "Brokerage",
+  "home.brokerage.copy": "Freight connection layer: street lanes, broker relationships, partner coverage, freight communication va shipment visibility.",
+  "home.consulting.title": "Consulting",
+  "home.consulting.copy": "Systems side: safety consulting, dispatch process, fleet setup, carrier setup, audits, compliance va operational cleanup.",
+});
+
 let currentLang = localStorage.getItem("kmg-language") || "en";
 const t = (key) => translations[currentLang]?.[key] || translations.en[key] || key;
 
@@ -569,11 +684,23 @@ applicationForm?.addEventListener("submit", async (event) => {
       body: JSON.stringify(payload),
     });
 
-    if (!response.ok) throw new Error("Lead delivery failed");
+    if (!response.ok) {
+      let details = {};
+      try {
+        details = await response.json();
+      } catch {
+        details = {};
+      }
+
+      const message = details.error || "Lead delivery failed";
+      const code = details.code ? ` (${details.code})` : "";
+      throw new Error(`${message}${code}`);
+    }
 
     applicationStatus.textContent = t("forms.applicationSuccess").replace("{name}", firstName);
     applicationForm.reset();
-  } catch {
+  } catch (error) {
+    console.error("KMG lead form error:", error);
     applicationStatus.textContent = t("forms.applicationError");
   } finally {
     submitButton.disabled = false;
