@@ -513,8 +513,9 @@ button, input, select, textarea { font: inherit; }
   width: 45%;
   content: "";
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
-  transform: skewX(-20deg);
+  transform: skewX(-20deg) translateX(0);
   animation: trustSweep 8s ease-in-out infinite;
+  will-change: transform;
 }
 
 .wrap { padding: 0 1rem; }
@@ -2450,8 +2451,8 @@ button, input, select, textarea { font: inherit; }
 }
 
 @keyframes trustSweep {
-  0%, 100% { left: -110%; }
-  45%, 55% { left: 140%; }
+  0%, 100% { transform: skewX(-20deg) translateX(0); }
+  45%, 55% { transform: skewX(-20deg) translateX(556%); }
 }
 
 @keyframes roadRun {
@@ -2472,6 +2473,222 @@ button, input, select, textarea { font: inherit; }
 @keyframes reviewsMarquee {
   from { transform: translateX(0); }
   to { transform: translateX(calc(-50% - 0.5rem)); }
+}
+
+/* ─── Typewriter ─────────────────────────────────────────── */
+
+.hero-typewriter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  height: 1.5em;
+  margin: 0 auto 1.5rem;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--brand);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 1.5px;
+  height: 1em;
+  background: var(--brand);
+  margin-left: 1px;
+  animation: cursorBlink 0.75s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ─── Scroll truck ───────────────────────────────────────── */
+
+.scroll-progress { overflow: visible; }
+
+.scroll-truck {
+  position: absolute;
+  top: -12px;
+  left: 0%;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  transform: translateX(-50%);
+  opacity: 0;
+  filter: drop-shadow(0 0 4px rgba(77, 141, 255, 0.6));
+}
+
+/* ─── Telegram live badge ────────────────────────────────── */
+
+.telegram-live {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+
+.telegram-live::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: livePing 2.2s ease-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes livePing {
+  0%   { transform: scale(1); opacity: 0.65; }
+  100% { transform: scale(3.8); opacity: 0; }
+}
+
+/* ─── Speed sheen on CTA buttons ────────────────────────── */
+
+.button-light,
+.button-dark-outline {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-light::after,
+.button-dark-outline::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -75%;
+  width: 55%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  transform: skewX(-18deg);
+  pointer-events: none;
+  transition: left 0.55s ease;
+}
+
+.button-light:hover::after,
+.button-dark-outline:hover::after {
+  left: 130%;
+}
+
+/* ─── Route map section ──────────────────────────────────── */
+
+.route-section {
+  background: #0a0a0a;
+  padding: 4.5rem 0;
+  overflow: hidden;
+  border-top: 0.5px solid #111;
+  border-bottom: 0.5px solid #111;
+}
+
+.route-inner .section-head h2 { color: #fff; }
+.route-inner .section-head .eye { color: #3a5a7a; }
+
+.route-map { margin-top: 2.5rem; }
+
+.route-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.route-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.route-map.is-visible .route-path { stroke-dashoffset: 0; }
+
+.route-stop {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.route-map.is-visible .route-stop:nth-child(5)  { opacity: 1; transition-delay: 0.5s; }
+.route-map.is-visible .route-stop:nth-child(6)  { opacity: 0.55; transition-delay: 0.85s; }
+.route-map.is-visible .route-stop:nth-child(7)  { opacity: 0.55; transition-delay: 1.2s; }
+.route-map.is-visible .route-stop:nth-child(8)  { opacity: 0.55; transition-delay: 1.55s; }
+.route-map.is-visible .route-stop:nth-child(9)  { opacity: 1; transition-delay: 1.9s; }
+
+.route-ping {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: routePing 2.4s ease-out infinite;
+}
+
+.route-map.is-visible .route-ping { opacity: 1; }
+
+@keyframes routePing {
+  0%   { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(3.2); opacity: 0; }
+}
+
+.route-truck-group { transition: opacity 0.3s ease; opacity: 0; }
+.route-map.is-visible .route-truck-group { opacity: 1; transition-delay: 0.4s; }
+
+.route-label {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+  fill: #c0c0c0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transition: opacity 0.4s ease 1s;
+}
+
+.route-label-hq { fill: #4d8dff; }
+
+.route-sublabel {
+  font-family: var(--font);
+  font-size: 9.5px;
+  fill: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  opacity: 0;
+  transition: opacity 0.4s ease 1.2s;
+}
+
+.route-sublabel-hq { fill: #2a4a6a; }
+
+.route-map.is-visible .route-label,
+.route-map.is-visible .route-sublabel { opacity: 1; }
+
+.route-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.route-tags span {
+  padding: 0.28rem 0.65rem;
+  border: 0.5px solid #1c1c1c;
+  background: #0f0f0f;
+  color: #404040;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 2px;
+}
+
+/* ─── Page fade transition ───────────────────────────────── */
+
+@keyframes pageIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+body { animation: pageIn 0.38s ease both; }
+
+body.is-leaving {
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

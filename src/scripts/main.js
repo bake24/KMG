@@ -13,6 +13,7 @@ const revealItems = document.querySelectorAll(".reveal");
 const faqItems = document.querySelectorAll(".faq-item");
 const parallaxImage = document.querySelector("[data-parallax] img");
 const scrollProgress = document.querySelector("[data-scroll-progress]");
+const scrollTruck = document.querySelector("[data-scroll-truck]");
 const hero = document.querySelector(".hero");
 const tiltItems = document.querySelectorAll("[data-tilt]");
 const newsOpenButtons = document.querySelectorAll("[data-news-open]");
@@ -521,6 +522,8 @@ Object.assign(translations.en, {
   "home.compliance.title": "Built with operating identity, compliance discipline, and room to scale.",
   "home.compliance.hq": "Headquarters",
   "home.compliance.capacity": "Mock capacity",
+  "home.lanes.eye": "Coverage",
+  "home.lanes.title": "Dedicated lanes across 48 states.",
   "home.about.eye": "What KMG does",
   "home.about.title": "KMG is more than one trucking lane. It is an operating platform for drivers, freight, equipment, and compliance.",
   "home.about.copy": "The company represents trucking, shop services, brokerage relationships, and consulting for carriers. That structure helps drivers find work, partners move freight, and fleet owners improve safety, dispatch, setup, and audit discipline.",
@@ -691,6 +694,8 @@ Object.assign(translations.ru, {
   "home.compliance.title": "Операционная идентичность, compliance дисциплина и база для роста.",
   "home.compliance.hq": "Headquarters",
   "home.compliance.capacity": "Пример capacity",
+  "home.lanes.eye": "Маршруты",
+  "home.lanes.title": "Выделенные маршруты по 48 штатам.",
   "home.about.eye": "Что делает KMG",
   "home.about.title": "KMG - это не одна trucking lane. Это operating platform для drivers, freight, equipment и compliance.",
   "home.about.copy": "Компания объединяет trucking, shop services, brokerage relationships и consulting для carriers. Такая структура помогает drivers находить работу, partners двигать freight, а fleet owners усиливать safety, dispatch, setup и audit discipline.",
@@ -864,6 +869,8 @@ Object.assign(translations.uz, {
   "home.compliance.title": "Operating identity, compliance discipline va scale uchun tayyor structure.",
   "home.compliance.hq": "Headquarters",
   "home.compliance.capacity": "Mock capacity",
+  "home.lanes.eye": "Yo'nalishlar",
+  "home.lanes.title": "48 shtat bo'ylab maxsus yo'nalishlar.",
   "home.about.eye": "KMG nima qiladi",
   "home.about.title": "KMG bitta trucking lane emas. Bu drivers, freight, equipment va compliance uchun operating platform.",
   "home.about.copy": "Company trucking, shop services, brokerage relationships va consultingni carriers uchun birlashtiradi. Bu driversga ish topish, partnersga freight move qilish, fleet ownersga safety, dispatch, setup va audit disciplineni kuchaytirishga yordam beradi.",
@@ -1045,7 +1052,8 @@ const setTelegramLink = () => {
   if (!telegramLink) return;
 
   telegramLink.href = `https://t.me/ParvinaSafetykmg?text=${encodeURIComponent(t("telegram.message"))}`;
-  telegramLink.querySelector("span").textContent = t("telegram.label");
+  const labelSpan = telegramLink.querySelector(".telegram-text") || telegramLink.querySelector("span");
+  if (labelSpan) labelSpan.textContent = t("telegram.label");
 };
 
 const applyTranslations = (lang) => {
@@ -1080,6 +1088,10 @@ const syncHeaderState = () => {
     const height = document.documentElement.scrollHeight - window.innerHeight;
     const percent = height > 0 ? (window.scrollY / height) * 100 : 0;
     scrollProgress.style.width = `${percent}%`;
+    if (scrollTruck) {
+      scrollTruck.style.left = `${percent}%`;
+      scrollTruck.style.opacity = percent > 2 ? "1" : "0";
+    }
   }
 };
 
@@ -1267,3 +1279,144 @@ window.addEventListener(
   },
   { passive: true }
 );
+
+// ─── Counter animation ────────────────────────────────────────────
+
+const counterEls = document.querySelectorAll("[data-counter]");
+
+const animateCounter = (el) => {
+  if (prefersReducedMotion.matches) return;
+  const target = parseInt(el.dataset.counter, 10);
+  const from = parseInt(el.dataset.counterFrom || "0", 10);
+  const suffix = el.dataset.counterSuffix || "";
+  const duration = 1400;
+  const startTime = performance.now();
+
+  const tick = (now) => {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(from + (target - from) * eased) + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+};
+
+if ("IntersectionObserver" in window && counterEls.length) {
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.6 }
+  );
+  counterEls.forEach((el) => counterObserver.observe(el));
+}
+
+// ─── Typewriter ───────────────────────────────────────────────────
+
+const typewriterEl = document.querySelector("[data-typewriter]");
+
+if (typewriterEl && !prefersReducedMotion.matches) {
+  const phrases = [
+    "300+ fleet network",
+    "USPS & Amazon lanes",
+    "$12k–$15k weekly gross",
+    "24/7 dispatch support",
+    "48 states coverage",
+  ];
+  let phraseIdx = 0;
+  let charIdx = 0;
+  let deleting = false;
+
+  const tick = () => {
+    const phrase = phrases[phraseIdx];
+    if (deleting) {
+      charIdx--;
+      typewriterEl.textContent = phrase.slice(0, charIdx);
+      if (charIdx === 0) {
+        deleting = false;
+        phraseIdx = (phraseIdx + 1) % phrases.length;
+        setTimeout(tick, 380);
+        return;
+      }
+      setTimeout(tick, 38);
+    } else {
+      charIdx++;
+      typewriterEl.textContent = phrase.slice(0, charIdx);
+      if (charIdx === phrase.length) {
+        deleting = true;
+        setTimeout(tick, 2200);
+        return;
+      }
+      setTimeout(tick, 58);
+    }
+  };
+  setTimeout(tick, 900);
+}
+
+// ─── Route map truck animation ────────────────────────────────────
+
+const routeMapEl = document.querySelector("[data-route-map]");
+const routePathEl = document.querySelector("[data-route-path]");
+const routeTruckEl = document.querySelector("[data-route-truck]");
+
+const animateTruckOnRoute = (path, truck) => {
+  if (prefersReducedMotion.matches) return;
+  const length = path.getTotalLength();
+  const duration = 2600;
+  let startTime = null;
+
+  const step = (timestamp) => {
+    if (!startTime) startTime = timestamp;
+    const t = Math.min((timestamp - startTime) / duration, 1);
+    const eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    const point = path.getPointAtLength(eased * length);
+    truck.setAttribute("transform", `translate(${point.x.toFixed(1)},${point.y.toFixed(1)})`);
+    if (t < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+};
+
+if ("IntersectionObserver" in window && routeMapEl && routePathEl && routeTruckEl) {
+  const routeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          routeMapEl.classList.add("is-visible");
+          routeObserver.unobserve(entry.target);
+          setTimeout(() => animateTruckOnRoute(routePathEl, routeTruckEl), 500);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  routeObserver.observe(routeMapEl);
+}
+
+// ─── Page fade transitions ────────────────────────────────────────
+
+const navigateFade = (href) => {
+  document.body.classList.add("is-leaving");
+  setTimeout(() => { window.location.href = href; }, 220);
+};
+
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("a[href]");
+  if (!link || !link.href) return;
+  if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+  if (link.target === "_blank") return;
+
+  let url;
+  try { url = new URL(link.href, location.origin); } catch { return; }
+
+  if (url.origin !== location.origin) return;
+  if (url.pathname === location.pathname && url.hash) return;
+  if (link.href === location.href) return;
+
+  e.preventDefault();
+  navigateFade(link.href);
+});

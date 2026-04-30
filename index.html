@@ -30,7 +30,18 @@
   </head>
   <body>
     <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
-    <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
+    <div class="scroll-progress" aria-hidden="true">
+      <span data-scroll-progress></span>
+      <span class="scroll-truck" data-scroll-truck>
+        <svg width="22" height="13" viewBox="0 0 22 13" fill="none">
+          <rect x="0" y="1" width="13" height="8" rx="1" fill="currentColor"/>
+          <path d="M13 3 L18 3 L20 7 L20 10 L13 10 Z" fill="currentColor" opacity="0.9"/>
+          <circle cx="3.5" cy="11.5" r="1.5" fill="currentColor"/>
+          <circle cx="10" cy="11.5" r="1.5" fill="currentColor"/>
+          <circle cx="17" cy="11.5" r="1.5" fill="currentColor"/>
+        </svg>
+      </span>
+    </div>
 
     <header class="site-header" data-header>
       <nav class="nav-shell" aria-label="Primary navigation">
@@ -70,6 +81,9 @@
         <div class="hero-inner reveal">
           <p class="hero-eye" data-i18n="home.hero.eye">KMG Group LLC / Philadelphia transportation company</p>
           <h1 data-i18n="home.hero.title">A transportation company built around fleet, service, brokerage, and safety.</h1>
+          <div class="hero-typewriter" aria-live="polite">
+            <span data-typewriter></span><span class="typewriter-cursor" aria-hidden="true"></span>
+          </div>
           <p class="hero-sub" data-i18n="home.hero.copy">
             KMG connects trucking operations, Freightliner fleet support, repair and inspection services,
             brokerage lanes, and consulting for carriers who want cleaner systems.
@@ -91,10 +105,10 @@
       </section>
 
       <section class="trust-bar">
-        <article class="trust-item reveal"><strong>300+</strong><span data-i18n="home.trust.fleet">Fleet and carrier network</span></article>
-        <article class="trust-item reveal"><strong>4</strong><span data-i18n="home.trust.directions">Core business directions</span></article>
-        <article class="trust-item reveal"><strong>24/7</strong><span data-i18n="home.trust.dispatch">Dispatch and driver support</span></article>
-        <article class="trust-item reveal"><strong>2020</strong><span data-i18n="home.trust.year">Operating since 2020</span></article>
+        <article class="trust-item reveal"><strong data-counter="300" data-counter-suffix="+">300+</strong><span data-i18n="home.trust.fleet">Fleet and carrier network</span></article>
+        <article class="trust-item reveal"><strong data-counter="4">4</strong><span data-i18n="home.trust.directions">Core business directions</span></article>
+        <article class="trust-item reveal"><strong data-counter="24" data-counter-suffix="/7">24/7</strong><span data-i18n="home.trust.dispatch">Dispatch and driver support</span></article>
+        <article class="trust-item reveal"><strong data-counter="2020" data-counter-from="2010">2020</strong><span data-i18n="home.trust.year">Operating since 2020</span></article>
       </section>
 
       <section class="wrap section">
@@ -107,6 +121,52 @@
           <article><span>MC Number</span><strong>MC-1321931</strong></article>
           <article><span data-i18n="home.compliance.hq">Headquarters</span><strong>Philadelphia, PA</strong></article>
           <article><span data-i18n="home.compliance.capacity">Mock capacity</span><strong>300+ network</strong></article>
+        </div>
+      </section>
+
+      <section class="route-section">
+        <div class="wrap route-inner">
+          <div class="section-head reveal">
+            <p class="eye" data-i18n="home.lanes.eye">Coverage</p>
+            <h2 data-i18n="home.lanes.title">Dedicated lanes across 48 states.</h2>
+          </div>
+          <div class="route-map reveal" data-route-map>
+            <svg class="route-svg" viewBox="0 0 960 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <line x1="40" y1="90" x2="920" y2="90" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+              <circle cx="80" cy="90" r="28" stroke="rgba(77,141,255,0.07)" stroke-width="1" fill="none"/>
+              <circle cx="880" cy="90" r="28" stroke="rgba(77,141,255,0.1)" stroke-width="1" fill="none"/>
+              <path class="route-path" data-route-path pathLength="1"
+                d="M 80,90 C 160,90 200,110 260,110 S 380,72 480,72 S 600,85 680,85 S 790,90 880,90"
+                stroke="#4d8dff" stroke-width="1.5" stroke-linecap="round"/>
+              <path pathLength="1"
+                d="M 80,90 C 160,90 200,110 260,110 S 380,72 480,72 S 600,85 680,85 S 790,90 880,90"
+                stroke="rgba(255,255,255,0.06)" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 20"/>
+              <circle class="route-stop" cx="80" cy="90" r="6" fill="#4d8dff"/>
+              <circle class="route-stop" cx="260" cy="110" r="4.5" fill="#4d8dff"/>
+              <circle class="route-stop" cx="480" cy="72" r="4.5" fill="#4d8dff"/>
+              <circle class="route-stop" cx="680" cy="85" r="4.5" fill="#4d8dff"/>
+              <circle class="route-stop" cx="880" cy="90" r="6" fill="#4d8dff"/>
+              <circle class="route-ping" cx="80" cy="90" r="6" stroke="#4d8dff" stroke-width="1.5" fill="none"/>
+              <circle class="route-ping" cx="880" cy="90" r="6" stroke="#4d8dff" stroke-width="1.5" fill="none" style="animation-delay:-1.1s"/>
+              <g class="route-truck-group" data-route-truck transform="translate(80,90)">
+                <circle r="9" fill="rgba(77,141,255,0.15)"/>
+                <circle r="4" fill="#ffffff"/>
+              </g>
+              <text class="route-label" x="80" y="118" text-anchor="middle">West Coast</text>
+              <text class="route-sublabel" x="80" y="131" text-anchor="middle">USPS · Amazon</text>
+              <text class="route-label" x="260" y="138" text-anchor="middle">South Side</text>
+              <text class="route-label" x="480" y="100" text-anchor="middle">Midwest</text>
+              <text class="route-sublabel" x="480" y="113" text-anchor="middle">Regional lanes</text>
+              <text class="route-label" x="680" y="113" text-anchor="middle">East Side</text>
+              <text class="route-label route-label-hq" x="880" y="118" text-anchor="middle">Philadelphia</text>
+              <text class="route-sublabel route-sublabel-hq" x="880" y="131" text-anchor="middle">KMG HQ</text>
+            </svg>
+            <div class="route-tags">
+              <span>USPS</span><span>Amazon</span><span>West Side</span>
+              <span>Midwest</span><span>East Side</span><span>South Side</span>
+              <span>48 States</span><span>Dedicated lanes</span>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -288,7 +348,8 @@
     </footer>
 
     <a class="telegram-float" href="https://t.me/ParvinaSafetykmg" target="_blank" rel="noopener" data-telegram-link aria-label="Message KMG HR on Telegram">
-      <span>Telegram</span>
+      <span class="telegram-live" aria-hidden="true"></span>
+      <span class="telegram-text">Telegram</span>
     </a>
 
     <script src="src/scripts/main.js" defer></script>
