@@ -14,10 +14,10 @@
       content="A transportation company built around fleet operations, driver recruiting, repair support, brokerage, and safety consulting."
       data-i18n-attr="content:meta.ogDescription"
     />
-    <meta property="og:image" content="assets/new/pictures for web/18 1200x630.webp" />
+    <meta property="og:image" content="assets/new/pictures for web/truck_trailer_sideview.png" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="assets/new/pictures for web/18 1200x630.webp" />
+    <meta name="twitter:image" content="assets/new/pictures for web/truck_trailer_sideview.png" />
     <title>KMG LLC | Trucking, Shop, Brokerage, Consulting</title>
     <link rel="icon" href="assets/new/pictures for web/23 logo circle.png" type="image/png" data-favicon />
     <link rel="apple-touch-icon" href="assets/new/pictures for web/23 logo circle.png" />
@@ -131,36 +131,410 @@
             <h2 data-i18n="home.lanes.title">Dedicated lanes across 48 states.</h2>
           </div>
           <div class="route-map reveal" data-route-map>
-            <svg class="route-svg" viewBox="0 0 960 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <line x1="40" y1="90" x2="920" y2="90" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-              <circle cx="80" cy="90" r="28" stroke="rgba(77,141,255,0.07)" stroke-width="1" fill="none"/>
-              <circle cx="880" cy="90" r="28" stroke="rgba(77,141,255,0.1)" stroke-width="1" fill="none"/>
-              <path class="route-path" data-route-path pathLength="1"
-                d="M 80,90 C 160,90 200,110 260,110 S 380,72 480,72 S 600,85 680,85 S 790,90 880,90"
-                stroke="#4d8dff" stroke-width="1.5" stroke-linecap="round"/>
-              <path pathLength="1"
-                d="M 80,90 C 160,90 200,110 260,110 S 380,72 480,72 S 600,85 680,85 S 790,90 880,90"
-                stroke="rgba(255,255,255,0.06)" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 20"/>
-              <circle class="route-stop" cx="80" cy="90" r="6" fill="#4d8dff"/>
-              <circle class="route-stop" cx="260" cy="110" r="4.5" fill="#4d8dff"/>
-              <circle class="route-stop" cx="480" cy="72" r="4.5" fill="#4d8dff"/>
-              <circle class="route-stop" cx="680" cy="85" r="4.5" fill="#4d8dff"/>
-              <circle class="route-stop" cx="880" cy="90" r="6" fill="#4d8dff"/>
-              <circle class="route-ping" cx="80" cy="90" r="6" stroke="#4d8dff" stroke-width="1.5" fill="none"/>
-              <circle class="route-ping" cx="880" cy="90" r="6" stroke="#4d8dff" stroke-width="1.5" fill="none" style="animation-delay:-1.1s"/>
-              <g class="route-truck-group" data-route-truck transform="translate(80,90)">
-                <circle r="9" fill="rgba(77,141,255,0.15)"/>
-                <circle r="4" fill="#ffffff"/>
-              </g>
-              <text class="route-label" x="80" y="118" text-anchor="middle">West Coast</text>
-              <text class="route-sublabel" x="80" y="131" text-anchor="middle">USPS · Amazon</text>
-              <text class="route-label" x="260" y="138" text-anchor="middle">South Side</text>
-              <text class="route-label" x="480" y="100" text-anchor="middle">Midwest</text>
-              <text class="route-sublabel" x="480" y="113" text-anchor="middle">Regional lanes</text>
-              <text class="route-label" x="680" y="113" text-anchor="middle">East Side</text>
-              <text class="route-label route-label-hq" x="880" y="118" text-anchor="middle">Philadelphia</text>
-              <text class="route-sublabel route-sublabel-hq" x="880" y="131" text-anchor="middle">KMG HQ</text>
-            </svg>
+            <div class="route-map-inner">
+              <img class="map-geo-bg" src="assets/map.svg" aria-hidden="true" loading="lazy" alt=""/>
+              <svg class="route-svg" viewBox="0 0 2000 1200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="KMG route network across 48 states">
+                <defs>
+                  <filter id="rte-glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="blur"/>
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                </defs>
+
+                <!-- Route network: staged east-to-west operating corridors -->
+                <g class="routes route-network-current" filter="url(#rte-glow)">
+                  <!-- Philadelphia root and Northeast feeder lanes -->
+                  <path class="route route-priority route-trunk" style="--d:.20s" pathLength="1" d="M1760,475 C1725,455 1695,448 1661,446"/>
+                  <path class="route" style="--d:.45s" pathLength="1" d="M1661,446 C1704,385 1708,310 1717,342 C1724,300 1726,235 1719,190 C1742,175 1760,171 1780,173 C1816,176 1840,185 1871,198"/>
+                  <path class="route" style="--d:.62s" pathLength="1" d="M1760,475 C1800,468 1836,454 1863,427 C1886,404 1902,382 1909,400 C1912,365 1910,334 1902,313"/>
+                  <path class="route" style="--d:.78s" pathLength="1" d="M1760,475 C1785,482 1803,489 1820,468 C1824,488 1817,505 1809,519 C1812,540 1810,558 1806,573"/>
+
+                  <!-- Northern long-haul lane -->
+                  <path class="route route-priority route-trunk" style="--d:.95s" pathLength="1" d="M1661,446 C1600,486 1545,508 1497,500 C1450,488 1444,402 1417,376 C1362,348 1304,350 1263,338 C1198,314 1170,282 1111,272 C1052,250 994,226 937,218 C835,196 748,199 669,210 C598,222 548,282 509,326"/>
+                  <path class="route route-priority" style="--d:1.40s" pathLength="1" d="M509,326 C463,282 405,190 355,138"/>
+                  <path class="route route-priority" style="--d:1.55s" pathLength="1" d="M509,326 C452,334 374,318 315,276"/>
+
+                  <!-- Central transcontinental lane -->
+                  <path class="route route-priority route-trunk" style="--d:1.20s" pathLength="1" d="M1661,446 C1608,490 1553,510 1497,500 C1456,500 1420,512 1395,524 C1362,540 1326,540 1297,528 C1254,508 1198,482 1155,452 C1085,424 1009,430 955,474 C922,448 933,383 935,346 C852,352 758,370 699,386 C626,400 562,366 509,326"/>
+                  <path class="route" style="--d:1.52s" pathLength="1" d="M1263,338 C1230,370 1190,417 1155,452"/>
+                  <path class="route" style="--d:1.70s" pathLength="1" d="M955,474 C970,520 982,565 989,606 C912,604 822,586 744.6,570.1 C728,500 710,436 699,386"/>
+                  <path class="route" style="--d:1.88s" pathLength="1" d="M989,606 C1008,648 1018,700 1027,740"/>
+                  <path class="route" style="--d:2.00s" pathLength="1" d="M1111,272 C1138,330 1150,394 1155,452"/>
+                  <path class="route" style="--d:2.12s" pathLength="1" d="M937,218 C938,268 936,312 935,346"/>
+                  <path class="route" style="--d:2.24s" pathLength="1" d="M1297,528 C1254,560 1218,588 1181,610"/>
+
+                  <!-- Mountain and West Coast lane -->
+                  <path class="route route-priority route-trunk" style="--d:1.75s" pathLength="1" d="M1497,500 C1415,578 1268,625 1181,610 C1110,602 1060,598 989,606 C900,612 822,590 744.6,570.1 C674,548 615,540 556.6,536.1"/>
+                  <path class="route" style="--d:2.05s" pathLength="1" d="M556.6,536.1 C505,520 440,502 386.6,492.1"/>
+                  <path class="route" style="--d:2.22s" pathLength="1" d="M556.6,536.1 C455,520 336,548 264.6,580.1"/>
+                  <path class="route" style="--d:2.05s" pathLength="1" d="M744.6,570.1 C735,638 726,704 710.6,756.1"/>
+                  <path class="route" style="--d:2.25s" pathLength="1" d="M710.6,756.1 C642,744 576,740 516.6,740.1"/>
+                  <path class="route" style="--d:2.42s" pathLength="1" d="M710.6,756.1 C610,698 480,620 264.6,580.1"/>
+                  <path class="route" style="--d:2.58s" pathLength="1" d="M699,386 C650,430 600,486 556.6,536.1"/>
+                  <path class="route" style="--d:2.72s" pathLength="1" d="M386.6,492.1 C350,430 325,350 315,276"/>
+                  <path class="route" style="--d:2.86s" pathLength="1" d="M509,326 C470,380 425,440 386.6,492.1"/>
+
+                  <!-- Southern long-haul lane -->
+                  <path class="route route-priority route-trunk" style="--d:1.05s" pathLength="1" d="M1760,475 C1718,502 1682,548 1655,594 C1614,590 1587,576 1569,568 C1515,574 1470,600 1447,624 C1418,648 1407,682 1405,708 C1335,724 1258,744 1191,766 C1128,752 1074,744 1027,740 C920,742 806,752 710.6,756.1"/>
+                  <path class="route" style="--d:1.35s" pathLength="1" d="M1655,594 C1668,630 1672,660 1663,684 C1656,724 1626,750 1611,768 C1584,794 1551,810 1519,828 C1565,886 1600,956 1621,1020"/>
+                  <path class="route" style="--d:1.60s" pathLength="1" d="M1405,708 C1410,752 1410,800 1403,836 C1367,845 1328,848 1295,846 C1262,864 1228,898 1199,924 C1110,930 1034,932 968,922.3"/>
+                  <path class="route" style="--d:1.85s" pathLength="1" d="M1181,610 C1188,660 1192,718 1191,766"/>
+                  <path class="route" style="--d:2.05s" pathLength="1" d="M1447,624 C1430,655 1418,684 1405,708"/>
+                  <path class="route" style="--d:2.18s" pathLength="1" d="M1519,828 C1482,832 1440,835 1403,836"/>
+                  <path class="route" style="--d:2.32s" pathLength="1" d="M1191,766 C1176,828 1184,884 1199,924"/>
+                </g>
+                <g class="routes route-network-previous" filter="url(#rte-glow)" aria-hidden="true">
+                  <!-- East hub and Northeast -->
+                  <path class="route route-priority" style="--d:.10s" pathLength="1" d="M1760,475 L1661,446"/>
+                  <path class="route" style="--d:.18s" pathLength="1" d="M1760,475 L1820,468"/>
+                  <path class="route" style="--d:.26s" pathLength="1" d="M1760,475 L1809,519"/>
+                  <path class="route" style="--d:.34s" pathLength="1" d="M1809,519 L1806,573"/>
+                  <path class="route" style="--d:.42s" pathLength="1" d="M1760,475 L1863,427"/>
+                  <path class="route" style="--d:.50s" pathLength="1" d="M1863,427 L1909,400"/>
+                  <path class="route" style="--d:.58s" pathLength="1" d="M1909,400 L1902,313"/>
+                  <path class="route" style="--d:.66s" pathLength="1" d="M1902,313 L1780,173"/>
+                  <path class="route" style="--d:.74s" pathLength="1" d="M1780,173 L1871,198"/>
+                  <path class="route" style="--d:.82s" pathLength="1" d="M1661,446 L1717,342"/>
+                  <path class="route" style="--d:.90s" pathLength="1" d="M1717,342 L1719,190"/>
+                  <path class="route" style="--d:.98s" pathLength="1" d="M1719,190 L1780,173"/>
+
+                  <!-- Northern freight corridor -->
+                  <path class="route route-priority" style="--d:1.08s" pathLength="1" d="M1661,446 L1497,500"/>
+                  <path class="route" style="--d:1.18s" pathLength="1" d="M1497,500 L1417,376"/>
+                  <path class="route" style="--d:1.28s" pathLength="1" d="M1417,376 L1263,338"/>
+                  <path class="route" style="--d:1.38s" pathLength="1" d="M1263,338 L1111,272"/>
+                  <path class="route" style="--d:1.48s" pathLength="1" d="M1111,272 L937,218"/>
+                  <path class="route" style="--d:1.58s" pathLength="1" d="M937,218 L669,210"/>
+                  <path class="route" style="--d:1.68s" pathLength="1" d="M669,210 L509,326"/>
+                  <path class="route route-priority" style="--d:1.78s" pathLength="1" d="M509,326 L355,138"/>
+                  <path class="route route-priority" style="--d:1.88s" pathLength="1" d="M509,326 L315,276"/>
+
+                  <!-- Midwest, Plains, and Rockies -->
+                  <path class="route" style="--d:1.20s" pathLength="1" d="M1497,500 L1395,524"/>
+                  <path class="route" style="--d:1.32s" pathLength="1" d="M1395,524 L1297,528"/>
+                  <path class="route" style="--d:1.44s" pathLength="1" d="M1297,528 L1155,452"/>
+                  <path class="route route-priority" style="--d:1.56s" pathLength="1" d="M1263,338 L1155,452"/>
+                  <path class="route route-priority" style="--d:1.68s" pathLength="1" d="M1155,452 L935,346"/>
+                  <path class="route" style="--d:1.76s" pathLength="1" d="M1155,452 L955,474"/>
+                  <path class="route" style="--d:1.84s" pathLength="1" d="M955,474 L935,346"/>
+                  <path class="route route-priority" style="--d:1.92s" pathLength="1" d="M935,346 L699,386"/>
+                  <path class="route route-priority" style="--d:2.04s" pathLength="1" d="M699,386 L509,326"/>
+                  <path class="route" style="--d:1.62s" pathLength="1" d="M1297,528 L1181,610"/>
+                  <path class="route" style="--d:1.76s" pathLength="1" d="M1181,610 L989,606"/>
+                  <path class="route" style="--d:1.86s" pathLength="1" d="M955,474 L989,606"/>
+                  <path class="route" style="--d:1.98s" pathLength="1" d="M989,606 L1027,740"/>
+                  <path class="route" style="--d:2.08s" pathLength="1" d="M989,606 L744.6,570.1"/>
+                  <path class="route route-priority" style="--d:2.18s" pathLength="1" d="M744.6,570.1 L699,386"/>
+                  <path class="route" style="--d:2.18s" pathLength="1" d="M744.6,570.1 L556.6,536.1"/>
+                  <path class="route" style="--d:2.32s" pathLength="1" d="M556.6,536.1 L386.6,492.1"/>
+                  <path class="route" style="--d:2.46s" pathLength="1" d="M386.6,492.1 L264.6,580.1"/>
+                  <path class="route" style="--d:2.22s" pathLength="1" d="M744.6,570.1 L710.6,756.1"/>
+                  <path class="route" style="--d:2.38s" pathLength="1" d="M710.6,756.1 L516.6,740.1"/>
+                  <path class="route" style="--d:2.54s" pathLength="1" d="M516.6,740.1 L264.6,580.1"/>
+
+                  <!-- Southern and Southeast corridor -->
+                  <path class="route route-priority" style="--d:.74s" pathLength="1" d="M1760,475 L1655,594"/>
+                  <path class="route" style="--d:.92s" pathLength="1" d="M1655,594 L1569,568"/>
+                  <path class="route" style="--d:1.10s" pathLength="1" d="M1569,568 L1447,624"/>
+                  <path class="route" style="--d:1.28s" pathLength="1" d="M1447,624 L1405,708"/>
+                  <path class="route" style="--d:1.46s" pathLength="1" d="M1405,708 L1191,766"/>
+                  <path class="route" style="--d:1.64s" pathLength="1" d="M1191,766 L1027,740"/>
+                  <path class="route" style="--d:1.82s" pathLength="1" d="M1027,740 L968,922.3"/>
+                  <path class="route" style="--d:1.00s" pathLength="1" d="M1655,594 L1663,684"/>
+                  <path class="route" style="--d:1.18s" pathLength="1" d="M1663,684 L1611,768"/>
+                  <path class="route" style="--d:1.36s" pathLength="1" d="M1611,768 L1519,828"/>
+                  <path class="route" style="--d:1.54s" pathLength="1" d="M1519,828 L1621,1020"/>
+                  <path class="route" style="--d:1.54s" pathLength="1" d="M1405,708 L1403,836"/>
+                  <path class="route" style="--d:1.72s" pathLength="1" d="M1403,836 L1295,846"/>
+                  <path class="route" style="--d:1.90s" pathLength="1" d="M1295,846 L1199,924"/>
+                  <path class="route" style="--d:2.08s" pathLength="1" d="M1199,924 L968,922.3"/>
+                </g>
+                <g class="routes route-network-legacy" filter="url(#rte-glow)" aria-hidden="true">
+                  <!-- Wave 1: Philadelphia hub -->
+                  <path class="route" style="--d:.1s"   pathLength="1" d="M1760,475 L1800,400"/>
+                  <path class="route" style="--d:.1s"   pathLength="1" d="M1760,475 L1748,525"/>
+                  <path class="route" style="--d:.1s"   pathLength="1" d="M1760,475 L1618,458"/>
+                  <!-- Wave 2 -->
+                  <path class="route" style="--d:.55s"  pathLength="1" d="M1800,400 L1878,308"/>
+                  <path class="route" style="--d:.55s"  pathLength="1" d="M1748,525 L1718,572"/>
+                  <path class="route" style="--d:.55s"  pathLength="1" d="M1618,458 L1550,420"/>
+                  <path class="route" style="--d:.55s"  pathLength="1" d="M1618,458 L1520,500"/>
+                  <!-- Wave 3 -->
+                  <path class="route" style="--d:1.0s"  pathLength="1" d="M1718,572 L1600,710"/>
+                  <path class="route" style="--d:1.0s"  pathLength="1" d="M1550,420 L1462,390"/>
+                  <path class="route" style="--d:1.0s"  pathLength="1" d="M1550,420 L1328,452"/>
+                  <path class="route" style="--d:1.0s"  pathLength="1" d="M1520,500 L1408,530"/>
+                  <path class="route" style="--d:1.0s"  pathLength="1" d="M1520,500 L1490,558"/>
+                  <!-- Wave 4 -->
+                  <path class="route" style="--d:1.45s" pathLength="1" d="M1600,710 L1490,822"/>
+                  <path class="route" style="--d:1.45s" pathLength="1" d="M1600,710 L1580,900"/>
+                  <path class="route" style="--d:1.45s" pathLength="1" d="M1328,452 L1245,618"/>
+                  <path class="route" style="--d:1.45s" pathLength="1" d="M1328,452 L1178,278"/>
+                  <path class="route" style="--d:1.45s" pathLength="1" d="M1408,530 L1245,618"/>
+                  <path class="route" style="--d:1.45s" pathLength="1" d="M1490,558 L1392,718"/>
+                  <!-- Wave 5 -->
+                  <path class="route" style="--d:1.9s"  pathLength="1" d="M1490,822 L1435,845"/>
+                  <path class="route" style="--d:1.9s"  pathLength="1" d="M1490,822 L1580,900"/>
+                  <path class="route" style="--d:1.9s"  pathLength="1" d="M1580,900 L1648,1012"/>
+                  <path class="route" style="--d:1.9s"  pathLength="1" d="M1245,618 L1108,600"/>
+                  <path class="route" style="--d:1.9s"  pathLength="1" d="M1245,618 L1262,748"/>
+                  <path class="route" style="--d:1.9s"  pathLength="1" d="M1178,278 L1045,238"/>
+                  <path class="route" style="--d:1.9s"  pathLength="1" d="M1392,718 L1262,748"/>
+                  <!-- Wave 6 -->
+                  <path class="route" style="--d:2.35s" pathLength="1" d="M1435,845 L1238,958"/>
+                  <path class="route" style="--d:2.35s" pathLength="1" d="M1262,748 L1198,802"/>
+                  <path class="route" style="--d:2.35s" pathLength="1" d="M1262,748 L1040,870"/>
+                  <path class="route" style="--d:2.35s" pathLength="1" d="M1108,600 L1018,490"/>
+                  <path class="route" style="--d:2.35s" pathLength="1" d="M1108,600 L1040,870"/>
+                  <path class="route" style="--d:2.35s" pathLength="1" d="M1045,238 L748,252"/>
+                  <!-- Wave 7 -->
+                  <path class="route" style="--d:2.8s"  pathLength="1" d="M1198,802 L1005,748"/>
+                  <path class="route" style="--d:2.8s"  pathLength="1" d="M1040,870 L1022,978"/>
+                  <path class="route" style="--d:2.8s"  pathLength="1" d="M1018,490 L802,515"/>
+                  <path class="route" style="--d:2.8s"  pathLength="1" d="M1238,958 L1022,978"/>
+                  <path class="route" style="--d:2.8s"  pathLength="1" d="M748,252 L492,388"/>
+                  <!-- Wave 8 -->
+                  <path class="route" style="--d:3.25s" pathLength="1" d="M1005,748 L738,738"/>
+                  <path class="route" style="--d:3.25s" pathLength="1" d="M1022,978 L968,1018"/>
+                  <path class="route" style="--d:3.25s" pathLength="1" d="M802,515 L738,738"/>
+                  <path class="route" style="--d:3.25s" pathLength="1" d="M802,515 L590,498"/>
+                  <path class="route" style="--d:3.25s" pathLength="1" d="M492,388 L293,232"/>
+                  <!-- Wave 9 -->
+                  <path class="route" style="--d:3.7s"  pathLength="1" d="M738,738 L762,900"/>
+                  <path class="route" style="--d:3.7s"  pathLength="1" d="M968,1018 L762,900"/>
+                  <path class="route" style="--d:3.7s"  pathLength="1" d="M590,498 L460,618"/>
+                  <path class="route" style="--d:3.7s"  pathLength="1" d="M590,498 L338,468"/>
+                  <path class="route" style="--d:3.7s"  pathLength="1" d="M293,232 L288,158"/>
+                  <!-- Wave 10 -->
+                  <path class="route" style="--d:4.15s" pathLength="1" d="M762,900 L562,758"/>
+                  <path class="route" style="--d:4.15s" pathLength="1" d="M460,618 L208,652"/>
+                  <path class="route" style="--d:4.15s" pathLength="1" d="M338,468 L218,498"/>
+                  <!-- Wave 11 -->
+                  <path class="route" style="--d:4.6s"  pathLength="1" d="M562,758 L208,652"/>
+                  <path class="route" style="--d:4.6s"  pathLength="1" d="M562,758 L592,828"/>
+                  <path class="route" style="--d:4.6s"  pathLength="1" d="M218,498 L152,532"/>
+                  <path class="route" style="--d:4.6s"  pathLength="1" d="M208,652 L232,722"/>
+                  <path class="route" style="--d:1.65s" pathLength="1" d="M1800,400 L1740,350"/>
+                  <path class="route" style="--d:1.85s" pathLength="1" d="M1740,350 L1628,318"/>
+                  <path class="route" style="--d:2.05s" pathLength="1" d="M1628,318 L1498,332"/>
+                  <path class="route" style="--d:2.25s" pathLength="1" d="M1498,332 L1328,452"/>
+                  <path class="route" style="--d:2.45s" pathLength="1" d="M1490,558 L1358,560"/>
+                  <path class="route" style="--d:2.65s" pathLength="1" d="M1358,560 L1198,802"/>
+                  <path class="route" style="--d:2.85s" pathLength="1" d="M1718,572 L1578,604"/>
+                  <path class="route" style="--d:3.05s" pathLength="1" d="M1578,604 L1392,718"/>
+                  <path class="route" style="--d:3.2s"  pathLength="1" d="M1648,1012 L1438,1068"/>
+                  <path class="route" style="--d:3.38s" pathLength="1" d="M1438,1068 L1238,958"/>
+                  <path class="route" style="--d:3.55s" pathLength="1" d="M1040,870 L918,852"/>
+                  <path class="route" style="--d:3.75s" pathLength="1" d="M918,852 L762,900"/>
+                  <path class="route" style="--d:3.95s" pathLength="1" d="M1005,748 L890,665"/>
+                  <path class="route" style="--d:4.15s" pathLength="1" d="M890,665 L738,738"/>
+                  <path class="route" style="--d:4.35s" pathLength="1" d="M738,738 L620,675"/>
+                  <path class="route" style="--d:4.55s" pathLength="1" d="M620,675 L460,618"/>
+                  <path class="route" style="--d:4.75s" pathLength="1" d="M748,252 L612,310"/>
+                  <path class="route" style="--d:4.95s" pathLength="1" d="M612,310 L492,388"/>
+                  <path class="route" style="--d:5.15s" pathLength="1" d="M590,498 L418,562"/>
+                  <path class="route" style="--d:5.35s" pathLength="1" d="M418,562 L208,652"/>
+                  <path class="route route-priority" style="--d:2.15s" pathLength="1" d="M744.6,570.1 L699,386"/>
+                  <path class="route route-priority" style="--d:2.35s" pathLength="1" d="M699,386 L509,326"/>
+                  <path class="route route-priority" style="--d:2.55s" pathLength="1" d="M509,326 L355,138"/>
+                  <path class="route route-priority" style="--d:2.75s" pathLength="1" d="M1263,338 L1155,452"/>
+                  <path class="route route-priority" style="--d:3.15s" pathLength="1" d="M1155,452 L935,346"/>
+                  <path class="route route-priority" style="--d:3.35s" pathLength="1" d="M935,346 L699,386"/>
+                </g>
+
+                <!-- City nodes — appear as routes arrive -->
+                <g class="cities route-cities-current">
+                  <circle class="city city-priority" style="--d:.10s" cx="1760" cy="475" r="4.2"/>
+                  <circle class="city" style="--d:.20s" cx="1661" cy="446" r="3.4"/>
+                  <circle class="city" style="--d:.24s" cx="1655" cy="594" r="3.4"/>
+                  <circle class="city" style="--d:.28s" cx="1717" cy="342" r="3.2"/>
+                  <circle class="city" style="--d:.32s" cx="1719" cy="190" r="3.2"/>
+                  <circle class="city" style="--d:.36s" cx="1780" cy="173" r="3.2"/>
+                  <circle class="city" style="--d:.40s" cx="1871" cy="198" r="3.2"/>
+                  <circle class="city" style="--d:.44s" cx="1863" cy="427" r="3.2"/>
+                  <circle class="city" style="--d:.48s" cx="1909" cy="400" r="3.2"/>
+                  <circle class="city" style="--d:.52s" cx="1902" cy="313" r="3.2"/>
+                  <circle class="city" style="--d:.56s" cx="1820" cy="468" r="3.2"/>
+                  <circle class="city" style="--d:.60s" cx="1809" cy="519" r="3.2"/>
+                  <circle class="city" style="--d:.64s" cx="1806" cy="573" r="3.2"/>
+
+                  <circle class="city" style="--d:.70s" cx="1497" cy="500" r="3.4"/>
+                  <circle class="city" style="--d:.76s" cx="1417" cy="376" r="3.2"/>
+                  <circle class="city" style="--d:.82s" cx="1263" cy="338" r="3.4"/>
+                  <circle class="city" style="--d:.88s" cx="1111" cy="272" r="3.2"/>
+                  <circle class="city" style="--d:.94s" cx="937" cy="218" r="3.2"/>
+                  <circle class="city" style="--d:1.00s" cx="669" cy="210" r="3.2"/>
+                  <circle class="city city-priority" style="--d:1.06s" cx="509" cy="326" r="4"/>
+                  <circle class="city city-priority" style="--d:1.12s" cx="355" cy="138" r="4"/>
+                  <circle class="city city-priority" style="--d:1.16s" cx="315" cy="276" r="4"/>
+
+                  <circle class="city" style="--d:.78s" cx="1395" cy="524" r="3.2"/>
+                  <circle class="city" style="--d:.84s" cx="1297" cy="528" r="3.2"/>
+                  <circle class="city city-priority" style="--d:.90s" cx="1155" cy="452" r="4"/>
+                  <circle class="city city-priority" style="--d:.98s" cx="935" cy="346" r="4"/>
+                  <circle class="city" style="--d:1.02s" cx="955" cy="474" r="3.4"/>
+                  <circle class="city city-priority" style="--d:1.08s" cx="699" cy="386" r="4"/>
+                  <circle class="city" style="--d:.96s" cx="1181" cy="610" r="3.2"/>
+                  <circle class="city" style="--d:1.02s" cx="989" cy="606" r="3.2"/>
+                  <circle class="city city-priority" style="--d:1.10s" cx="744.6" cy="570.1" r="4"/>
+                  <circle class="city" style="--d:1.18s" cx="556.6" cy="536.1" r="3.2"/>
+                  <circle class="city" style="--d:1.24s" cx="386.6" cy="492.1" r="3.2"/>
+                  <circle class="city" style="--d:1.30s" cx="264.6" cy="580.1" r="3.2"/>
+                  <circle class="city" style="--d:1.18s" cx="710.6" cy="756.1" r="3.2"/>
+                  <circle class="city" style="--d:1.24s" cx="516.6" cy="740.1" r="3.2"/>
+
+                  <circle class="city" style="--d:.72s" cx="1569" cy="568" r="3.2"/>
+                  <circle class="city" style="--d:.78s" cx="1447" cy="624" r="3.2"/>
+                  <circle class="city" style="--d:.84s" cx="1405" cy="708" r="3.2"/>
+                  <circle class="city" style="--d:.90s" cx="1191" cy="766" r="3.2"/>
+                  <circle class="city" style="--d:.98s" cx="1027" cy="740" r="3.2"/>
+                  <circle class="city" style="--d:1.12s" cx="968" cy="922.3" r="3.2"/>
+                  <circle class="city" style="--d:.74s" cx="1663" cy="684" r="3.2"/>
+                  <circle class="city" style="--d:.80s" cx="1611" cy="768" r="3.2"/>
+                  <circle class="city" style="--d:.86s" cx="1519" cy="828" r="3.2"/>
+                  <circle class="city" style="--d:.92s" cx="1621" cy="1020" r="3.2"/>
+                  <circle class="city" style="--d:.92s" cx="1403" cy="836" r="3.2"/>
+                  <circle class="city" style="--d:.98s" cx="1295" cy="846" r="3.2"/>
+                  <circle class="city" style="--d:1.04s" cx="1199" cy="924" r="3.2"/>
+                </g>
+                <g class="cities route-cities-previous" aria-hidden="true">
+                  <circle class="city city-priority" style="--d:.10s" cx="1760" cy="475" r="4.2"/>
+                  <circle class="city" style="--d:.20s" cx="1661" cy="446" r="3.4"/>
+                  <circle class="city" style="--d:.28s" cx="1820" cy="468" r="3.2"/>
+                  <circle class="city" style="--d:.34s" cx="1809" cy="519" r="3.2"/>
+                  <circle class="city" style="--d:.42s" cx="1806" cy="573" r="3.2"/>
+                  <circle class="city" style="--d:.50s" cx="1863" cy="427" r="3.2"/>
+                  <circle class="city" style="--d:.58s" cx="1909" cy="400" r="3.2"/>
+                  <circle class="city" style="--d:.66s" cx="1902" cy="313" r="3.2"/>
+                  <circle class="city" style="--d:.74s" cx="1780" cy="173" r="3.2"/>
+                  <circle class="city" style="--d:.82s" cx="1871" cy="198" r="3.2"/>
+                  <circle class="city" style="--d:.90s" cx="1717" cy="342" r="3.2"/>
+                  <circle class="city" style="--d:.98s" cx="1719" cy="190" r="3.2"/>
+
+                  <circle class="city" style="--d:1.08s" cx="1497" cy="500" r="3.4"/>
+                  <circle class="city" style="--d:1.18s" cx="1417" cy="376" r="3.2"/>
+                  <circle class="city" style="--d:1.28s" cx="1263" cy="338" r="3.4"/>
+                  <circle class="city" style="--d:1.38s" cx="1111" cy="272" r="3.2"/>
+                  <circle class="city" style="--d:1.48s" cx="937" cy="218" r="3.2"/>
+                  <circle class="city" style="--d:1.58s" cx="669" cy="210" r="3.2"/>
+                  <circle class="city city-priority" style="--d:1.68s" cx="509" cy="326" r="4"/>
+                  <circle class="city city-priority" style="--d:1.78s" cx="355" cy="138" r="4"/>
+                  <circle class="city city-priority" style="--d:1.88s" cx="315" cy="276" r="4"/>
+
+                  <circle class="city" style="--d:1.20s" cx="1395" cy="524" r="3.2"/>
+                  <circle class="city" style="--d:1.32s" cx="1297" cy="528" r="3.2"/>
+                  <circle class="city city-priority" style="--d:1.44s" cx="1155" cy="452" r="4"/>
+                  <circle class="city city-priority" style="--d:1.68s" cx="935" cy="346" r="4"/>
+                  <circle class="city" style="--d:1.76s" cx="955" cy="474" r="3.4"/>
+                  <circle class="city city-priority" style="--d:1.92s" cx="699" cy="386" r="4"/>
+                  <circle class="city" style="--d:1.62s" cx="1181" cy="610" r="3.2"/>
+                  <circle class="city" style="--d:1.76s" cx="989" cy="606" r="3.2"/>
+                  <circle class="city city-priority" style="--d:2.08s" cx="744.6" cy="570.1" r="4"/>
+                  <circle class="city" style="--d:2.18s" cx="556.6" cy="536.1" r="3.2"/>
+                  <circle class="city" style="--d:2.32s" cx="386.6" cy="492.1" r="3.2"/>
+                  <circle class="city" style="--d:2.46s" cx="264.6" cy="580.1" r="3.2"/>
+                  <circle class="city" style="--d:2.22s" cx="710.6" cy="756.1" r="3.2"/>
+                  <circle class="city" style="--d:2.38s" cx="516.6" cy="740.1" r="3.2"/>
+
+                  <circle class="city" style="--d:.74s" cx="1655" cy="594" r="3.4"/>
+                  <circle class="city" style="--d:.92s" cx="1569" cy="568" r="3.2"/>
+                  <circle class="city" style="--d:1.10s" cx="1447" cy="624" r="3.2"/>
+                  <circle class="city" style="--d:1.28s" cx="1405" cy="708" r="3.2"/>
+                  <circle class="city" style="--d:1.46s" cx="1191" cy="766" r="3.2"/>
+                  <circle class="city" style="--d:1.64s" cx="1027" cy="740" r="3.2"/>
+                  <circle class="city" style="--d:1.82s" cx="968" cy="922.3" r="3.2"/>
+                  <circle class="city" style="--d:1.00s" cx="1663" cy="684" r="3.2"/>
+                  <circle class="city" style="--d:1.18s" cx="1611" cy="768" r="3.2"/>
+                  <circle class="city" style="--d:1.36s" cx="1519" cy="828" r="3.2"/>
+                  <circle class="city" style="--d:1.54s" cx="1621" cy="1020" r="3.2"/>
+                  <circle class="city" style="--d:1.54s" cx="1403" cy="836" r="3.2"/>
+                  <circle class="city" style="--d:1.72s" cx="1295" cy="846" r="3.2"/>
+                  <circle class="city" style="--d:1.90s" cx="1199" cy="924" r="3.2"/>
+                </g>
+                <g class="cities route-cities-legacy" aria-hidden="true">
+                  <circle class="city" style="--d:.55s"  cx="1800" cy="400"  r="3.5"/>
+                  <circle class="city" style="--d:.55s"  cx="1748" cy="525"  r="3.5"/>
+                  <circle class="city" style="--d:.55s"  cx="1618" cy="458"  r="3.5"/>
+                  <circle class="city" style="--d:1.0s"  cx="1878" cy="308"  r="3.5"/>
+                  <circle class="city" style="--d:1.0s"  cx="1718" cy="572"  r="3.5"/>
+                  <circle class="city" style="--d:1.0s"  cx="1550" cy="420"  r="3.5"/>
+                  <circle class="city" style="--d:1.0s"  cx="1520" cy="500"  r="3.5"/>
+                  <circle class="city" style="--d:1.45s" cx="1600" cy="710"  r="3.5"/>
+                  <circle class="city" style="--d:1.45s" cx="1462" cy="390"  r="3.5"/>
+                  <circle class="city" style="--d:1.45s" cx="1328" cy="452"  r="3.5"/>
+                  <circle class="city" style="--d:1.45s" cx="1408" cy="530"  r="3.5"/>
+                  <circle class="city" style="--d:1.45s" cx="1490" cy="558"  r="3.5"/>
+                  <circle class="city" style="--d:1.9s"  cx="1490" cy="822"  r="3.5"/>
+                  <circle class="city" style="--d:1.9s"  cx="1580" cy="900"  r="3.5"/>
+                  <circle class="city" style="--d:1.9s"  cx="1245" cy="618"  r="3.5"/>
+                  <circle class="city" style="--d:1.9s"  cx="1178" cy="278"  r="3.5"/>
+                  <circle class="city" style="--d:1.9s"  cx="1392" cy="718"  r="3.5"/>
+                  <circle class="city" style="--d:2.35s" cx="1435" cy="845"  r="3.5"/>
+                  <circle class="city" style="--d:2.35s" cx="1648" cy="1012" r="3.5"/>
+                  <circle class="city" style="--d:2.35s" cx="1108" cy="600"  r="3.5"/>
+                  <circle class="city" style="--d:2.35s" cx="1262" cy="748"  r="3.5"/>
+                  <circle class="city" style="--d:2.35s" cx="1045" cy="238"  r="3.5"/>
+                  <circle class="city" style="--d:2.8s"  cx="1238" cy="958"  r="3.5"/>
+                  <circle class="city" style="--d:2.8s"  cx="1198" cy="802"  r="3.5"/>
+                  <circle class="city" style="--d:2.8s"  cx="1040" cy="870"  r="3.5"/>
+                  <circle class="city" style="--d:2.8s"  cx="1018" cy="490"  r="3.5"/>
+                  <circle class="city" style="--d:2.8s"  cx="748"  cy="252"  r="3.5"/>
+                  <circle class="city" style="--d:3.25s" cx="1005" cy="748"  r="3.5"/>
+                  <circle class="city" style="--d:3.25s" cx="1022" cy="978"  r="3.5"/>
+                  <circle class="city" style="--d:3.25s" cx="802"  cy="515"  r="3.5"/>
+                  
+                  <circle class="city" style="--d:3.7s"  cx="738"  cy="738"  r="3.5"/>
+                  <circle class="city" style="--d:3.7s"  cx="968"  cy="1018" r="3.5"/>
+                  <circle class="city" style="--d:3.7s"  cx="590"  cy="498"  r="3.5"/>
+                  <circle class="city" style="--d:3.7s"  cx="293"  cy="232"  r="3.5"/>
+                  <circle class="city" style="--d:3.7s"  cx="288"  cy="158"  r="3.5"/>
+                  <circle class="city" style="--d:4.15s" cx="762"  cy="900"  r="3.5"/>
+                  <circle class="city" style="--d:4.15s" cx="460"  cy="618"  r="3.5"/>
+                  <circle class="city" style="--d:4.15s" cx="338"  cy="468"  r="3.5"/>
+                  <circle class="city" style="--d:4.15s" cx="218"  cy="498"  r="3.5"/>
+                  <circle class="city" style="--d:4.6s"  cx="562"  cy="758"  r="3.5"/>
+                  <circle class="city" style="--d:4.6s"  cx="592"  cy="828"  r="3.5"/>
+                  <circle class="city" style="--d:4.6s"  cx="208"  cy="652"  r="3.5"/>
+                  <circle class="city" style="--d:4.6s"  cx="152"  cy="532"  r="3.5"/>
+                  <circle class="city" style="--d:4.6s"  cx="232"  cy="722"  r="3.5"/>
+                  <circle class="city" style="--d:1.85s" cx="1740" cy="350"  r="3.3"/>
+                  <circle class="city" style="--d:2.05s" cx="1628" cy="318"  r="3.3"/>
+                  <circle class="city" style="--d:2.25s" cx="1498" cy="332"  r="3.3"/>
+                  <circle class="city" style="--d:2.65s" cx="1358" cy="560"  r="3.3"/>
+                  <circle class="city" style="--d:3.05s" cx="1578" cy="604"  r="3.3"/>
+                  <circle class="city" style="--d:3.38s" cx="1438" cy="1068" r="3.3"/>
+                  <circle class="city" style="--d:3.75s" cx="918"  cy="852"  r="3.3"/>
+                  <circle class="city" style="--d:4.15s" cx="890"  cy="665"  r="3.3"/>
+                  <circle class="city" style="--d:4.55s" cx="620"  cy="675"  r="3.3"/>
+                  <circle class="city" style="--d:4.95s" cx="612"  cy="310"  r="3.3"/>
+                  <circle class="city" style="--d:5.35s" cx="418"  cy="562"  r="3.3"/>
+                  <circle class="city city-priority" style="--d:2.15s" cx="744.6" cy="570.1" r="4"/>
+                  <circle class="city city-priority" style="--d:2.35s" cx="699"   cy="386"   r="4"/>
+                  <circle class="city city-priority" style="--d:2.55s" cx="509"   cy="326"   r="4"/>
+                  <circle class="city city-priority" style="--d:2.55s" cx="355"   cy="138"   r="4"/>
+                  <circle class="city city-priority" style="--d:2.75s" cx="1263"  cy="338"   r="4"/>
+                  <circle class="city city-priority" style="--d:2.95s" cx="315"   cy="276"   r="4"/>
+                  <circle class="city city-priority" style="--d:3.15s" cx="1155"  cy="452"   r="4"/>
+                  <circle class="city city-priority" style="--d:3.35s" cx="935"   cy="346"   r="4"/>
+                </g>
+
+                <!-- Philadelphia HQ — source of the network -->
+                <g class="state-specials" aria-hidden="true">
+                  <ellipse class="state-special-outline" cx="324" cy="995" rx="235" ry="158"/>
+                  <ellipse class="state-special-outline" cx="330" cy="1070" rx="280" ry="58"/>
+                  <ellipse class="state-special-outline" cx="670" cy="1122" rx="126" ry="67"/>
+                  <text class="state-special-label" x="322.6" y="1000">AK</text>
+                  <text class="state-special-label" x="662.6" y="1126">HI</text>
+                </g>
+
+                <circle class="hq-ping" cx="1760" cy="475" r="12"/>
+                <circle class="hq-ping" cx="1760" cy="475" r="12" style="animation-delay:-1.5s"/>
+                <circle cx="1760" cy="475" r="12" fill="rgba(77,141,255,0.12)"/>
+                <circle cx="1760" cy="475" r="6"  fill="#4d8dff"/>
+                <circle cx="1760" cy="475" r="3"  fill="#ffffff"/>
+              </svg>
+            </div>
+
             <div class="route-tags">
               <span>USPS</span><span>Amazon</span><span>West Side</span>
               <span>Midwest</span><span>East Side</span><span>South Side</span>
@@ -205,11 +579,11 @@
               <div class="service-tags"><em>Fleet</em><em>Lanes</em><em>Gross</em><em>Reviews</em></div>
               <a class="button button-light" href="trucking.html" data-i18n="home.more">More Details</a>
             </div>
-            <div class="service-row-media"><img src="assets/new/pictures for web/05 2400x1000.webp" alt="KMG trucking service" /></div>
+            <div class="service-row-media"><img src="assets/new/pictures for web/07 1600x2000.webp" alt="KMG trucking service" /></div>
           </article>
           <article class="service-row reveal">
             <div class="service-row-copy">
-              <span>02 / Shop</span>
+              <span>02 / Repair Shop</span>
               <h3 data-i18n="home.shop.title">Shop</h3>
               <p class="service-lead" data-i18n="home.shop.copy">The service side of KMG: repair support, RS workflow, invoices, inspection readiness, documentation, and uptime control.</p>
               <div class="service-metrics"><article><strong>Repair</strong><small data-i18n="home.shop.metricOne">Truck support</small></article><article><strong>RS</strong><small data-i18n="home.shop.metricTwo">Service requests</small></article><article><strong>Invoice</strong><small data-i18n="home.shop.metricThree">Records and billing</small></article></div>
@@ -217,7 +591,7 @@
               <div class="service-tags"><em>Repair</em><em>RS</em><em>Invoice</em><em>Inspection</em></div>
               <a class="button button-outline" href="shop.html" data-i18n="home.more">More Details</a>
             </div>
-            <div class="service-row-media"><img src="assets/new/pictures for web/17 1200x900.webp" alt="KMG shop service" /></div>
+            <div class="service-row-media"><img src="assets/new/pictures for web/09 1200x900.webp" alt="KMG shop service" /></div>
           </article>
           <article class="service-row reveal">
             <div class="service-row-copy">
@@ -229,7 +603,7 @@
               <div class="service-tags"><em>Street lanes</em><em>Partners</em><em>Freight</em><em>Coverage</em></div>
               <a class="button button-outline" href="brokerage.html" data-i18n="home.more">More Details</a>
             </div>
-            <div class="service-row-media"><img src="assets/new/pictures for web/08 2400x1200.webp" alt="KMG brokerage service" /></div>
+            <div class="service-row-media"><img src="assets/new/pictures for web/brokerage.png" alt="KMG brokerage service" /></div>
           </article>
           <article class="service-row reveal">
             <div class="service-row-copy">
@@ -241,7 +615,7 @@
               <div class="service-tags"><em>Safety</em><em>Dispatch</em><em>Fleet setup</em><em>Audit</em></div>
               <a class="button button-outline" href="consulting.html" data-i18n="home.more">More Details</a>
             </div>
-            <div class="service-row-media"><img src="assets/new/pictures for web/13 1600x1000.webp" alt="KMG consulting service" /></div>
+            <div class="service-row-media"><img src="assets/new/pictures for web/consulting.png" alt="KMG consulting service" /></div>
           </article>
         </div>
       </section>
@@ -259,7 +633,7 @@
             </div>
           </div>
           <div class="form-stack reveal">
-            <div class="apply-visual media-card"><img src="assets/new/pictures for web/19 1584x396.webp" alt="KMG recruiting banner" /></div>
+            <div class="apply-visual media-card"><img src="assets/new/pictures for web/truck_trailer_sideview.png" alt="KMG recruiting banner" /></div>
             <form class="form-box form-box-strong" data-application-form>
               <h3 data-i18n="apply.formTitle">Driver application</h3>
               <label class="field honeypot" aria-hidden="true"><span>Company</span><input name="company" type="text" tabindex="-1" autocomplete="off" /></label>

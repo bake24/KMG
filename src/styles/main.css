@@ -113,9 +113,9 @@ button, input, select, textarea { font: inherit; }
 }
 
 .nav-shell {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) auto minmax(120px, 1fr);
   align-items: center;
-  justify-content: space-between;
   gap: 0.75rem;
   min-height: 42px;
 }
@@ -123,11 +123,16 @@ button, input, select, textarea { font: inherit; }
 .nav-brand {
   display: inline-flex;
   align-items: center;
+  justify-self: start;
   gap: 0.55rem;
   color: var(--text);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
+}
+
+.nav-brand span {
+  display: none;
 }
 
 .nav-brand img,
@@ -153,7 +158,15 @@ button, input, select, textarea { font: inherit; }
   gap: 0.75rem;
 }
 
-.nav-menu { gap: 0.75rem; }
+.nav-menu {
+  justify-self: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.nav-actions {
+  justify-self: end;
+}
 
 .nav-menu a {
   font-size: 12.5px;
@@ -621,6 +634,7 @@ button, input, select, textarea { font: inherit; }
 .service-row {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  align-items: stretch;
   gap: 1.25rem;
   min-height: 390px;
   padding: 1rem;
@@ -804,6 +818,7 @@ button, input, select, textarea { font: inherit; }
 }
 
 .service-row-media {
+  height: clamp(330px, 34vw, 430px);
   min-height: 330px;
   border-radius: 22px;
   overflow: hidden;
@@ -1586,6 +1601,7 @@ button, input, select, textarea { font: inherit; }
   object-fit: contain;
   object-position: center;
   background: #fff;
+  transform: scale(1.18);
 }
 
 .form-box h3 {
@@ -2587,81 +2603,121 @@ button, input, select, textarea { font: inherit; }
 
 .route-map { margin-top: 2.5rem; }
 
-.route-svg {
-  width: 100%;
-  height: auto;
-  overflow: visible;
+.route-map-inner {
+  position: relative;
+  aspect-ratio: 5 / 3;
+  max-width: 860px;
+  margin: 0 auto;
 }
 
-.route-path {
+.map-geo-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.95;
+  filter: invert(1) brightness(0.32) saturate(0);
+  pointer-events: none;
+  user-select: none;
+}
+
+.route-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.state-specials {
+  pointer-events: none;
+}
+
+.state-special-outline {
+  fill: #0a0a0a;
+  stroke: #0a0a0a;
+  stroke-width: 12;
+}
+
+.state-special-label {
+  fill: #0a0a0a;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-anchor: middle;
+}
+
+/* ── Route lines ── */
+
+.route {
+  stroke: #4d8dff;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  transition: stroke-dashoffset 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: stroke-dashoffset 3.2s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0s);
 }
 
-.route-map.is-visible .route-path { stroke-dashoffset: 0; }
-
-.route-stop {
-  opacity: 0;
-  transition: opacity 0.4s ease;
+.route-network-legacy,
+.route-network-previous,
+.route-cities-legacy {
+  display: none;
 }
 
-.route-map.is-visible .route-stop:nth-child(5)  { opacity: 1; transition-delay: 0.5s; }
-.route-map.is-visible .route-stop:nth-child(6)  { opacity: 0.55; transition-delay: 0.85s; }
-.route-map.is-visible .route-stop:nth-child(7)  { opacity: 0.55; transition-delay: 1.2s; }
-.route-map.is-visible .route-stop:nth-child(8)  { opacity: 0.55; transition-delay: 1.55s; }
-.route-map.is-visible .route-stop:nth-child(9)  { opacity: 1; transition-delay: 1.9s; }
+.route-cities-previous {
+  display: none;
+}
 
-.route-ping {
+.route-priority {
+  stroke-width: 1.65;
+  filter: drop-shadow(0 0 10px rgba(77, 141, 255, 0.72));
+}
+
+.route-trunk {
+  stroke-width: 1.65;
+  stroke: #5b96ff;
+}
+
+.route-map.is-visible .route { stroke-dashoffset: 0; }
+
+/* ── City nodes ── */
+
+.city {
+  fill: #4d8dff;
   opacity: 0;
+  transition: opacity 1.5s ease var(--d, 0s);
+}
+
+.city-priority {
+  filter: drop-shadow(0 0 8px rgba(77, 141, 255, 0.82));
+}
+
+.route-map.is-visible .city { opacity: 0.9; }
+
+/* ── Philadelphia HQ ping ── */
+
+.hq-ping {
+  fill: none;
+  stroke: #4d8dff;
+  stroke-width: 1.5;
   transform-box: fill-box;
   transform-origin: center;
-  animation: routePing 2.4s ease-out infinite;
+  animation: hqPing 2.6s ease-out infinite;
 }
 
-.route-map.is-visible .route-ping { opacity: 1; }
-
-@keyframes routePing {
+@keyframes hqPing {
   0%   { transform: scale(1); opacity: 0.7; }
-  100% { transform: scale(3.2); opacity: 0; }
+  100% { transform: scale(4); opacity: 0; }
 }
 
-.route-truck-group { transition: opacity 0.3s ease; opacity: 0; }
-.route-map.is-visible .route-truck-group { opacity: 1; transition-delay: 0.4s; }
-
-.route-label {
-  font-family: var(--font);
-  font-size: 11px;
-  font-weight: 600;
-  fill: #c0c0c0;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  opacity: 0;
-  transition: opacity 0.4s ease 1s;
-}
-
-.route-label-hq { fill: #4d8dff; }
-
-.route-sublabel {
-  font-family: var(--font);
-  font-size: 9.5px;
-  fill: #444;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  opacity: 0;
-  transition: opacity 0.4s ease 1.2s;
-}
-
-.route-sublabel-hq { fill: #2a4a6a; }
-
-.route-map.is-visible .route-label,
-.route-map.is-visible .route-sublabel { opacity: 1; }
+/* ── Tags ── */
 
 .route-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   justify-content: center;
 }
 
@@ -2859,6 +2915,7 @@ body.is-leaving {
   }
 
   .service-row-media {
+    height: 230px;
     min-height: 230px;
   }
 
