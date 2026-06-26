@@ -1,0 +1,2 @@
+# Frontend posts to /api/telegram-lead; route it to the Netlify function (rewrite, keeps URL).
+/api/telegram-lead   /.netlify/functions/telegram-lead   200
