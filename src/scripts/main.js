@@ -1064,7 +1064,6 @@ const setTheme = (theme) => {
   if (favicon) favicon.setAttribute("href", "assets/new/pictures for web/23 logo circle.png");
 
   if (themeToggle) {
-    themeToggle.textContent = theme === "dark" ? t("theme.dark") : t("theme.light");
     themeToggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} theme`);
   }
 };
@@ -1122,7 +1121,9 @@ const closeMobileMenu = () => {
 };
 
 applyTranslations(currentLang);
-setTheme(localStorage.getItem("kmg-theme") || "light");
+const storedTheme = localStorage.getItem("kmg-theme");
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+setTheme(storedTheme || systemTheme);
 syncHeaderState();
 
 window.addEventListener("scroll", syncHeaderState, { passive: true });
